@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lotear — Relatórios de Campanha</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#07090f;color:#edeae3;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px}
+.logo{font-family:'DM Serif Display',serif;font-size:32px;color:#c9a96e;letter-spacing:2px;margin-bottom:8px;text-align:center}
+.sub{font-size:13px;color:#555f70;letter-spacing:2px;text-transform:uppercase;margin-bottom:56px;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;width:100%;max-width:760px}
+.card{background:#0c1018;border:1px solid rgba(255,255,255,0.05);border-top:3px solid #c9a96e;padding:24px;text-decoration:none;color:#edeae3;transition:border-top-color .2s}
+.card:hover{border-top-color:#22c55e}
+.card-name{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:6px}
+.card-meta{font-size:11px;color:#555f70;letter-spacing:1px;text-transform:uppercase}
+.footer{margin-top:48px;font-size:11px;color:#555f70;text-align:center}
+</style>
+</head>
+<body>
+<div class="logo">LOTEAR</div>
+<div class="sub">Relatórios de Campanha</div>
+<div class="grid">
+  <a class="card" href="/onpaulista">
+    <div class="card-name">ON Paulista</div>
+    <div class="card-meta">Vitacon · Av. Paulista · SP</div>
+  </a>
+  <a class="card" href="/nikfreicaneca">
+    <div class="card-name">NIK Frei Caneca</div>
+    <div class="card-meta">Planik · Consolação · SP</div>
+  </a>
+  <a class="card" href="/feelpontal">
+    <div class="card-name">FEEL Pontal Oceânico</div>
+    <div class="card-meta">SAS · Recreio · RJ</div>
+  </a>
+</div>
+<div class="footer">Lotear Inteligência Imobiliária · Uso interno</div>
+</body>
+</html>
