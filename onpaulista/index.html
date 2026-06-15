@@ -486,26 +486,42 @@ canvas{max-height:220px}
 <div class="page" id="page-meta">
   <div class="hero">
     <div>
-      <div class="hero-ey">Meta Ads MCP · 07/06 → 15/06/2026 (9 dias, D9 parcial)</div>
-      <div class="hero-h1">Meta Ads — <em>Performance dos Conjuntos</em></div>
-      <div class="hero-sub">230 leads · R$8.327 gastos · CPL R$36,21 · 3 conjuntos ativos</div>
+      <div class="hero-ey">Meta Ads MCP · 30/05 → 15/06/2026 (17 dias, 2 campanhas, D9* parcial)</div>
+      <div class="hero-h1">Meta Ads — <em>Performance Consolidada</em></div>
+      <div class="hero-sub">282 leads · R$11.968 gastos · CPL R$42,47 · 3 conjuntos ativos + 1 campanha anterior pausada</div>
     </div>
     <div class="hero-stats">
-      <div class="hs"><div class="hs-val" style="color:var(--yellow)">R$36,21</div><div class="hs-lbl">CPL médio</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--gold)">230</div><div class="hs-lbl">Leads Meta</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--yellow)">R$42,47</div><div class="hs-lbl">CPL médio</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--gold)">282</div><div class="hs-lbl">Leads Meta</div></div>
     </div>
   </div>
-  <div class="kpis kpis-8">
-    <div class="kpi"><div class="kl">Gasto total</div><div class="kv gold">R$8.327</div><div class="kr">9 dias</div><div class="bdg bb">07–15/06</div></div>
-    <div class="kpi"><div class="kl">Leads Meta</div><div class="kv green">230</div><div class="kr">3 conjuntos</div><div class="bdg bg">Ativo</div></div>
-    <div class="kpi"><div class="kl">CPL médio</div><div class="kv yellow">R$36,21</div><div class="kr">Meta: R$80</div><div class="bdg bg">55% abaixo</div></div>
-    <div class="kpi"><div class="kl">Melhor CPL</div><div class="kv green">R$31,33</div><div class="kr">Centro-Oeste Agro</div><div class="bdg bg">Top</div></div>
-    <div class="kpi"><div class="kl">Impressões</div><div class="kv blue">62.236</div><div class="kr">Freq. 1,65</div><div class="bdg bg">Saudável</div></div>
-    <div class="kpi"><div class="kl">Alcance</div><div class="kv gold">37.756</div><div class="kr">Pessoas únicas</div><div class="bdg bb">9 dias</div></div>
-    <div class="kpi"><div class="kl">CTR médio</div><div class="kv gold">2,3%</div><div class="kr">Bench: 0,8–1,5%</div><div class="bdg bg">Acima bench</div></div>
-    <div class="kpi"><div class="kl">CPM médio</div><div class="kv gold">R$134</div><div class="kr">Bench: R$80–140</div><div class="bdg bg">Normal</div></div>
+
+  <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center">
+    <div style="font-size:10px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px">Filtros:</div>
+    <select id="meta-f-campanha" onchange="metaFilter()" style="background:var(--bg3);border:1px solid var(--border2);color:var(--white);font-size:11px;padding:6px 10px;border-radius:4px;font-family:'Inter',sans-serif">
+      <option value="todas">Todas as campanhas</option>
+      <option value="ativa">Apenas Ativa (07–15/06)</option>
+      <option value="pausada">Apenas Anterior (30/05–06/06)</option>
+    </select>
+    <select id="meta-f-periodo" onchange="metaFilter()" style="background:var(--bg3);border:1px solid var(--border2);color:var(--white);font-size:11px;padding:6px 10px;border-radius:4px;font-family:'Inter',sans-serif">
+      <option value="17">Últimos 17 dias</option>
+      <option value="9">Últimos 9 dias (campanha ativa)</option>
+      <option value="7">Últimos 7 dias</option>
+    </select>
   </div>
-  <div class="g3" style="margin-bottom:16px">
+
+  <div class="kpis kpis-8" id="meta-kpis">
+    <div class="kpi"><div class="kl">Gasto total</div><div class="kv gold" id="meta-k-gasto">R$11.968</div><div class="kr">17 dias</div><div class="bdg bb">30/05–15/06</div></div>
+    <div class="kpi"><div class="kl">Leads Meta</div><div class="kv green" id="meta-k-leads">282</div><div class="kr">2 campanhas</div><div class="bdg bg">Ativo</div></div>
+    <div class="kpi"><div class="kl">CPL médio</div><div class="kv yellow" id="meta-k-cpl">R$42,47</div><div class="kr">Meta: R$80</div><div class="bdg bg" id="meta-k-cpl-bdg">47% abaixo</div></div>
+    <div class="kpi"><div class="kl">Melhor CPL</div><div class="kv green">R$31,33</div><div class="kr">Centro-Oeste Agro</div><div class="bdg bg">Top</div></div>
+    <div class="kpi"><div class="kl">Impressões</div><div class="kv blue" id="meta-k-impr">96.776</div><div class="kr">Soma 2 campanhas</div><div class="bdg bg">17 dias</div></div>
+    <div class="kpi"><div class="kl">Alcance</div><div class="kv gold" id="meta-k-alc">53.271</div><div class="kr">Pode haver overlap*</div><div class="bdg bb">Estimado</div></div>
+    <div class="kpi"><div class="kl">CTR médio</div><div class="kv gold" id="meta-k-ctr">1,87%</div><div class="kr">Bench: 0,8–1,5%</div><div class="bdg bg">Acima bench</div></div>
+    <div class="kpi"><div class="kl">CPM médio</div><div class="kv gold" id="meta-k-cpm">R$124</div><div class="kr">Bench: R$80–140</div><div class="bdg bg">Normal</div></div>
+  </div>
+
+  <div class="g4" style="margin-bottom:16px">
     <div class="cc cc-green">
       <div class="cc-star bg">MELHOR CPL</div>
       <div class="cc-name">Centro-Oeste Agro</div>
@@ -523,13 +539,21 @@ canvas{max-height:220px}
     <div class="cc cc-yellow">
       <div class="cc-name">Nordeste Segmentado</div>
       <div class="cc-cpl" style="color:var(--yellow)">R$43,52</div>
-      <div class="cc-leads">66 leads · R$2.872 gastos · R$350/dia</div>
+      <div class="cc-leads">66 leads · R$2.871 gastos · R$350/dia</div>
       <div class="cc-m"><div><div class="cc-ml">CPM</div><div class="cc-mv">R$136</div></div><div><div class="cc-ml">CTR</div><div class="cc-mv">1,8%</div></div><div><div class="cc-ml">Freq.</div><div class="cc-mv">1,62</div></div></div>
     </div>
+    <div class="cc" style="border-top-color:var(--muted)">
+      <div class="cc-star" style="background:var(--muted);color:var(--bg)">PAUSADA</div>
+      <div class="cc-name">Campanha Anterior<br>(30/05–06/06)</div>
+      <div class="cc-cpl" style="color:var(--muted2)">R$69,91</div>
+      <div class="cc-leads">51 leads · R$3.566 gastos · 7 dias</div>
+      <div class="cc-m"><div><div class="cc-ml">CPM</div><div class="cc-mv">R$104.87</div></div><div><div class="cc-ml">CTR</div><div class="cc-mv">1,14%</div></div><div><div class="cc-ml">Freq.</div><div class="cc-mv">1,63</div></div></div>
+    </div>
   </div>
+
   <div class="g2">
-    <div class="card"><div class="ct">Leads e CPL por conjunto</div><div class="cw"><canvas id="c-meta-conj"></canvas></div></div>
-    <div class="card"><div class="ct">Evolução CPL diário — 3 conjuntos (9 dias)</div><div class="cw"><canvas id="c-meta-cpl"></canvas></div></div>
+    <div class="card"><div class="ct">Leads e CPL por conjunto (campanha ativa)</div><div class="cw"><canvas id="c-meta-conj"></canvas></div></div>
+    <div class="card"><div class="ct" id="meta-cpl-title">Evolução CPL consolidado — 17 dias (2 campanhas)</div><div class="cw"><canvas id="c-meta-cpl"></canvas></div></div>
   </div>
 </div>
 
@@ -886,12 +910,11 @@ new Chart(document.getElementById('c-fds'),{type:'doughnut',data:{labels:['Dias 
 
 // ===== META ADS =====
 new Chart(document.getElementById('c-meta-conj'),{type:'bar',data:{labels:['Brasil ex-SP','Centro-Oeste Agro','Nordeste'],datasets:[{label:'Leads',data:[90,74,66],backgroundColor:['rgba(201,169,110,.7)','rgba(34,197,94,.7)','rgba(245,158,11,.6)'],yAxisID:'y'},{label:'CPL (R$)',data:[34.86,31.33,43.52],type:'line',borderColor:R,pointBackgroundColor:R,yAxisID:'y2',tension:.3}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:R,font:{size:9}},grid:{display:false}}}}});
-new Chart(document.getElementById('c-meta-cpl'),{type:'line',data:{labels:["D1 07/06", "D2 08/06", "D3 09/06", "D4 10/06", "D5 11/06", "D6 12/06", "D7 13/06", "D8 14/06", "D9 15/06*"],datasets:[
-  {label:'Brasil ex-SP',data:[24.25, 47.17, 29.24, 45.66, 30.6, 40.29, 41.34, 39.39, 25.73],borderColor:G,backgroundColor:'rgba(34,197,94,.08)',tension:.4,pointRadius:4,pointBackgroundColor:G},
-  {label:'Centro-Oeste',data:[26.42, 26.08, 32.16, 16.2, 26.87, 37.17, 35.01, 80.16, 69.5],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,pointRadius:4,pointBackgroundColor:GOLD},
-  {label:'Nordeste',data:[142.69, 50.71, 19.66, 52.71, 38.54, 29.1, 49.04, 46.09, 112.41],borderColor:Y,backgroundColor:'rgba(245,158,11,.08)',tension:.4,pointRadius:4,pointBackgroundColor:Y},
-  {label:'Meta R$80',data:[80,80,80,80,80,80,80,80,80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0}
-]},options:{...opt()}});
+new Chart(document.getElementById('c-meta-cpl'),{type:'line',data:{labels:["30/05", "31/05", "01/06", "02/06", "03/06", "04/06", "05/06", "06/06", "07/06", "08/06", "09/06", "10/06", "11/06", "12/06", "13/06", "14/06", "15/06*"],datasets:[
+  {label:'CPL consolidado (R$)',data:[70.53, 65.25, 62.83, 103.27, null, null, null, 42.95, 41.03, 39.42, 25.69, 32.44, 31.85, 35.0, 40.76, 49.86, 55.53],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,pointRadius:3,pointBackgroundColor:GOLD,yAxisID:'y2',spanGaps:true},
+  {label:'Leads/dia',data:[4, 17, 15, 4, 0, 0, 0, 7, 38, 29, 32, 28, 27, 28, 21, 26, 6],type:'bar',backgroundColor:'rgba(96,165,250,.35)',yAxisID:'y'},
+  {label:'Meta R$80',data:[80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0,yAxisID:'y2'}
+]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
 
 // ===== QUALIFICAÇÃO =====
 new Chart(document.getElementById('c-camp-compare'),{type:'bar',data:{labels:['07-06 (ativa)','30-06 (pausada)'],datasets:[{label:'Leads',data:[223,49],backgroundColor:['rgba(34,197,94,.5)','rgba(107,114,128,.4)'],yAxisID:'y'},{label:'Negócios',data:[44,2],backgroundColor:['rgba(34,197,94,.9)','rgba(239,68,68,.6)'],yAxisID:'y2'}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid},title:{display:true,text:'Leads',color:tick,font:{size:8}}},y2:{position:'right',ticks:{color:G,font:{size:9}},grid:{display:false},title:{display:true,text:'Negócios',color:G,font:{size:8}}}}}});
@@ -929,6 +952,43 @@ new Chart(document.getElementById('c-cpl-evolucao'),{type:'line',data:{labels:["
   {label:'Nordeste',data:[142.69, 50.71, 19.66, 52.71, 38.54, 29.1, 49.04, 46.09, 112.41],borderColor:Y,tension:.4,pointRadius:4,pointBackgroundColor:Y}
 ]},options:{...opt()}});
 
+
+// ===== META ADS FILTROS =====
+const META_DATA = {
+  todas: {leads:282,gasto:11968.22,cpl:42.47,impr:96776,alc:53271,ctr:1.87,cpm:123.67},
+  ativa: {leads:231,gasto:8402.71,cpl:36.38,impr:62776,alc:32386,ctr:2.26,cpm:133.85},
+  pausada: {leads:51,gasto:3565.51,cpl:69.91,impr:34000,alc:20885,ctr:1.14,cpm:104.87}
+};
+function fmtMoney(v){return 'R$'+v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function fmtMoney0(v){return 'R$'+Math.round(v).toLocaleString('pt-BR')}
+function fmtNum(v){return Math.round(v).toLocaleString('pt-BR')}
+function metaFilter(){
+  const camp = document.getElementById('meta-f-campanha').value;
+  const d = META_DATA[camp];
+  document.getElementById('meta-k-gasto').textContent = fmtMoney0(d.gasto);
+  document.getElementById('meta-k-leads').textContent = fmtNum(d.leads);
+  document.getElementById('meta-k-cpl').textContent = fmtMoney(d.cpl);
+  document.getElementById('meta-k-impr').textContent = fmtNum(d.impr);
+  document.getElementById('meta-k-alc').textContent = fmtNum(d.alc);
+  document.getElementById('meta-k-ctr').textContent = d.ctr.toFixed(2).replace('.',',')+'%';
+  document.getElementById('meta-k-cpm').textContent = fmtMoney0(d.cpm);
+  const bdg = document.getElementById('meta-k-cpl-bdg');
+  const diffPct = Math.round((1-d.cpl/80)*100);
+  bdg.textContent = (diffPct>=0 ? diffPct+'% abaixo' : Math.abs(diffPct)+'% acima');
+  bdg.className = 'bdg ' + (diffPct>=0 ? 'bg' : 'br');
+
+  const periodo = document.getElementById('meta-f-periodo').value;
+  const titleEl = document.getElementById('meta-cpl-title');
+  if(camp==='pausada'){
+    titleEl.textContent = 'Evolu\u00e7\u00e3o CPL \u2014 Campanha Anterior (30/05\u201306/06, 7 dias)';
+  } else if(camp==='ativa' || periodo==='9'){
+    titleEl.textContent = 'Evolu\u00e7\u00e3o CPL \u2014 Campanha Ativa (07\u201315/06, 9 dias)';
+  } else if(periodo==='7'){
+    titleEl.textContent = 'Evolu\u00e7\u00e3o CPL consolidado \u2014 \u00daltimos 7 dias';
+  } else {
+    titleEl.textContent = 'Evolu\u00e7\u00e3o CPL consolidado \u2014 17 dias (2 campanhas)';
+  }
+}
 </script>
 </body>
 </html>
