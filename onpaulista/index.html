@@ -478,108 +478,34 @@ canvas{max-height:220px}
 
 
 <script>
-
 function show(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
   event.target.classList.add('active');
 }
-
-const G='#22c55e',Y='#f59e0b',R='#ef4444',GOLD='#c9a96e',B='#60a5fa',M='#555f70';
+const G='#22c55e',Y='#f59e0b',R='#ef4444',GOLD='#c9a96e',B='#60a5fa',M2='#555f70';
 const grid='rgba(255,255,255,0.04)',tick='#555f70';
 const opt=()=>({responsive:true,plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}}}});
 
-// Retro CPL 7 dias
-new Chart(document.getElementById('c-retro-cpl'),{type:'line',data:{labels:['06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
-  {label:'CPL (R$)',data:[31.68, 40.76, 46.04, 41.22, 34.79, 47.47, 36.07],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.1)',tension:.4,pointRadius:4,spanGaps:true},
-  {label:'Meta R$80',data:[80, 80, 80, 80, 80, 80, 80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0}
-]},options:{...opt()}});
+new Chart(document.getElementById('c-retro-cpl'),{type:'line',data:{labels:['06/12','06/13','06/14','06/15','06/16','06/17','06/18'],datasets:[{label:'CPL (R$)',data:[31.68,40.76,46.04,41.22,34.79,47.47,36.07],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.1)',tension:.4,pointRadius:4,spanGaps:true},{label:'Meta R$80',data:[80,80,80,80,80,80,80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0}]},options:{...opt()}});
+new Chart(document.getElementById('c-retro-leads'),{type:'bar',data:{labels:['06/12','06/13','06/14','06/15','06/16','06/17','06/18'],datasets:[{label:'Leads/dia',data:[28,21,26,25,31,20,10],backgroundColor:'rgba(96,165,250,.5)'}]},options:{...opt()}});
+new Chart(document.getElementById('c-funil'),{type:'bar',data:{labels:['Leads','Curioso+','Negócios'],datasets:[{label:'Volume',data:[348,187,55],backgroundColor:[B,Y,G]}]},options:{...opt(),indexAxis:'y'}});
+new Chart(document.getElementById('c-interesse'),{type:'bar',data:{labels:['investir','morar','investimento para ','moradia própria','ainda estou avalia'],datasets:[{label:'Leads',data:[251,56,26,8,7],backgroundColor:'rgba(96,165,250,.5)',yAxisID:'y'},{label:'Negócios',data:[46,7,2,0,0],type:'line',borderColor:GOLD,yAxisID:'y2',pointRadius:4}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{display:false}}}}});
+new Chart(document.getElementById('c-criativos-bar'),{type:'bar',data:{labels:['05 - 01 - Dinamico - L','01 - Dinamico - Lotear','02 - Estatico','01 - Estatico','01 - Estatico','01 - Dinamico - Empree'],datasets:[{label:'Leads',data:[279,6,5,5,13,3],backgroundColor:'rgba(96,165,250,.5)',yAxisID:'y'},{label:'% Negócio',data:[17.9,16.7,20.0,20.0,7.7,0.0],type:'line',borderColor:GOLD,yAxisID:'y2',pointRadius:4}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
+new Chart(document.getElementById('c-criativos-pie'),{type:'doughnut',data:{labels:['05 - 01 - Dinamico - L','01 - Dinamico - Lotear','02 - Estatico','01 - Estatico','01 - Estatico','01 - Dinamico - Empree'],datasets:[{data:[50,1,1,1,1,0],backgroundColor:[GOLD,G,B,Y,R,M2]}]},options:{responsive:true,plugins:{legend:{position:'right',labels:{color:'#8892a0',font:{size:9}}}}}});
+new Chart(document.getElementById('c-horas'),{type:'bar',data:{labels:[...Array(24).keys()].map(h=>h+'h'),datasets:[{label:'Leads',data:[14,8,7,5,6,9,13,8,9,10,16,10,13,14,12,12,18,11,18,21,32,28,25,29],backgroundColor:'rgba(96,165,250,.6)'}]},options:{...opt()}});
+new Chart(document.getElementById('c-neg-horas'),{type:'bar',data:{labels:[...Array(24).keys()].map(h=>h+'h'),datasets:[{label:'Negócios',data:[2,0,0,1,1,1,4,2,1,1,3,1,1,1,2,3,2,0,4,4,3,4,7,7],backgroundColor:'rgba(201,169,110,.7)'}]},options:{...opt()}});
+new Chart(document.getElementById('c-diasemana'),{type:'bar',data:{labels:['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],datasets:[{label:'Leads',data:[66,62,48,38,26,31,77],backgroundColor:'rgba(96,165,250,.6)'}]},options:{...opt()}});
+new Chart(document.getElementById('c-neg-diasemana'),{type:'bar',data:{labels:['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],datasets:[{label:'Negócios',data:[9,9,12,5,6,5,9],backgroundColor:'rgba(201,169,110,.7)'}]},options:{...opt()}});
+new Chart(document.getElementById('c-meta-conj'),{type:'bar',data:{labels:['Brasil ex-SP Capital','Centro-Oeste Agro','Nordeste Segmentado'],datasets:[{label:'Leads',data:[126,97,88],backgroundColor:['rgba(96,165,250,.6)','rgba(34,197,94,.6)','rgba(245,158,11,.6)'],yAxisID:'y'},{label:'CPL (R$)',data:[34.2,33.26,44.58],type:'line',borderColor:GOLD,yAxisID:'y2',pointRadius:5,pointBackgroundColor:GOLD},{label:'% Negócio CRM',data:[12.2,19.4,19.3],type:'line',borderColor:G,borderDash:[4,4],yAxisID:'y2',pointRadius:4}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
+new Chart(document.getElementById('c-meta-cpl'),{type:'line',data:{labels:['05/30','05/31','06/01','06/02','06/03','06/04','06/05','06/06','06/07','06/08','06/09','06/10','06/11','06/12','06/13','06/14','06/15','06/16','06/17','06/18'],datasets:[{label:'CPL (R$)',data:[60.03,65.24,63.15,98.38,null,null,null,44.59,36.17,36.02,27.21,31.69,30.87,31.68,40.76,46.04,41.22,34.79,47.47,36.07],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,pointRadius:3,pointBackgroundColor:GOLD,yAxisID:'y2',spanGaps:true},{label:'Leads/dia',data:[3,17,15,4,0,0,0,6,35,29,32,28,27,28,21,26,25,31,20,10],type:'bar',backgroundColor:'rgba(96,165,250,.35)',yAxisID:'y'},{label:'Meta R$80',data:[80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0,yAxisID:'y2'}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
+new Chart(document.getElementById('c-qualif-conj'),{type:'bar',data:{labels:['Brasil ex-SP Capital','Centro-Oeste Agro','Nordeste Segmentado'],datasets:[{label:'% Negócio',data:[12.2,19.4,19.3],backgroundColor:[GOLD,G,Y]},{label:'Leads',data:[126,97,88],type:'line',borderColor:B,yAxisID:'y2',pointRadius:4}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:B,font:{size:9}},grid:{display:false}}}}});
+new Chart(document.getElementById('c-qualif-cons'),{type:'bar',data:{labels:['FABIANADE OLIVEIRA CARVALHO','Marcelo de Albuquerque Pereira','VivianeRodrigues'],datasets:[{label:'Leads',data:[186,125,37],backgroundColor:'rgba(96,165,250,.5)'},{label:'Negócios',data:[28,27,0],backgroundColor:GOLD}]},options:{...opt()}});
+new Chart(document.getElementById('c-evolucao-crm'),{type:'line',data:{labels:['05/30','05/31','06/01','06/02','06/06','06/07','06/08','06/09','06/10','06/11','06/12','06/13','06/14','06/15','06/16','06/17','06/18'],datasets:[{label:'Leads/dia',data:[3,17,15,4,7,34,27,27,28,27,26,21,26,24,31,20,11],borderColor:B,backgroundColor:'rgba(96,165,250,.1)',tension:.4,yAxisID:'y'},{label:'Negócios/dia',data:[1,0,0,0,1,4,8,4,8,5,6,3,5,1,5,4,0],borderColor:GOLD,tension:.4,yAxisID:'y2',pointRadius:4,pointBackgroundColor:GOLD}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{display:false}}}}});
+new Chart(document.getElementById('c-evolucao-cpl'),{type:'line',data:{labels:['05/30','05/31','06/01','06/02','06/03','06/04','06/05','06/06','06/07','06/08','06/09','06/10','06/11','06/12','06/13','06/14','06/15','06/16','06/17','06/18'],datasets:[{label:'CPL (R$)',data:[60.03,65.24,63.15,98.38,null,null,null,44.59,36.17,36.02,27.21,31.69,30.87,31.68,40.76,46.04,41.22,34.79,47.47,36.07],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,spanGaps:true},{label:'Leads/dia',data:[3,17,15,4,0,0,0,6,35,29,32,28,27,28,21,26,25,31,20,10],type:'bar',backgroundColor:'rgba(96,165,250,.3)',yAxisID:'y2'}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:GOLD,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:B,font:{size:9}},grid:{display:false}}}}});
 
-new Chart(document.getElementById('c-retro-leads'),{type:'bar',data:{labels:['06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
-  {label:'Leads/dia',data:[28, 21, 26, 25, 31, 20, 10],backgroundColor:'rgba(96,165,250,.5)'}
-]},options:{...opt()}});
-
-// Funil
-new Chart(document.getElementById('c-funil'),{type:'bar',data:{labels:['Leads','Curioso+','Negócios'],datasets:[
-  {label:'Volume',data:[348, 187, 55],backgroundColor:[B,Y,G]}
-]},options:{...opt(),indexAxis:'y'}});
-
-// Interesse
-new Chart(document.getElementById('c-interesse'),{type:'bar',data:{labels:['investir', 'morar', 'investimento para re', 'moradia própria', 'ainda estou avaliand'],datasets:[
-  {label:'Leads',data:[251, 56, 26, 8, 7],backgroundColor:'rgba(96,165,250,.5)',yAxisID:'y'},
-  {label:'% Negócio',data:[46, 7, 2, 0, 0],type:'line',borderColor:GOLD,yAxisID:'y2',pointRadius:4}
-]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{display:false}}}}});
-
-// Criativos
-new Chart(document.getElementById('c-criativos-bar'),{type:'bar',data:{labels:['2026', '2026', '2026', '2026', '2026', '2026'],datasets:[
-  {label:'Leads',data:[279, 6, 5, 5, 13, 3],backgroundColor:'rgba(96,165,250,.5)',yAxisID:'y'},
-  {label:'% Negócio',data:[17.9, 16.7, 20.0, 20.0, 7.7, 0.0],type:'line',borderColor:GOLD,yAxisID:'y2',pointRadius:4}
-]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
-
-new Chart(document.getElementById('c-criativos-pie'),{type:'doughnut',data:{labels:['2026', '2026', '2026', '2026', '2026', '2026'],datasets:[
-  {data:[50, 1, 1, 1, 1, 0],backgroundColor:[GOLD,G,B,Y,R,M]}
-]},options:{responsive:true,plugins:{legend:{position:'right',labels:{color:'#8892a0',font:{size:9}}}}}});
-
-// Horários
-new Chart(document.getElementById('c-horas'),{type:'bar',data:{labels:[...Array(24).keys()].map(h=>h+'h'),datasets:[
-  {label:'Leads',data:[14, 8, 7, 5, 6, 9, 13, 8, 9, 10, 16, 10, 13, 14, 12, 12, 18, 11, 18, 21, 32, 28, 25, 29],backgroundColor:'rgba(96,165,250,.6)'}
-]},options:{...opt()}});
-new Chart(document.getElementById('c-neg-horas'),{type:'bar',data:{labels:[...Array(24).keys()].map(h=>h+'h'),datasets:[
-  {label:'Negócios',data:[2, 0, 0, 1, 1, 1, 4, 2, 1, 1, 3, 1, 1, 1, 2, 3, 2, 0, 4, 4, 3, 4, 7, 7],backgroundColor:'rgba(201,169,110,.7)'}
-]},options:{...opt()}});
-
-// Dias semana
-new Chart(document.getElementById('c-diasemana'),{type:'bar',data:{labels:['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],datasets:[
-  {label:'Leads',data:[66, 62, 48, 38, 26, 31, 77],backgroundColor:'rgba(96,165,250,.6)'}
-]},options:{...opt()}});
-new Chart(document.getElementById('c-neg-diasemana'),{type:'bar',data:{labels:['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],datasets:[
-  {label:'Negócios',data:[0, 0, 0, 0, 0, 0, 0],backgroundColor:'rgba(201,169,110,.7)'}
-]},options:{...opt()}});
-
-// Meta conjuntos
-new Chart(document.getElementById('c-meta-conj'),{type:'bar',data:{labels:['Brasil ex-SP Capital', 'Centro-Oeste Agro', 'Nordeste Segmentado'],datasets:[
-  {label:'Leads',data:[126, 97, 88],backgroundColor:[B,G,Y],yAxisID:'y'},
-  {label:'CPL (R$)',data:[34.2, 33.26, 44.58],type:'line',borderColor:GOLD,yAxisID:'y2',pointRadius:5,pointBackgroundColor:GOLD},
-  {label:'% Negócio CRM',data:[12.2, 19.4, 19.3],type:'line',borderColor:G,borderDash:[4,4],yAxisID:'y2',pointRadius:4}
-]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
-
-// Meta CPL evolução 19 dias
-new Chart(document.getElementById('c-meta-cpl'),{type:'line',data:{labels:['05/30', '05/31', '06/01', '06/02', '06/03', '06/04', '06/05', '06/06', '06/07', '06/08', '06/09', '06/10', '06/11', '06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
-  {label:'CPL consolidado (R$)',data:[60.03, 65.24, 63.15, 98.38, None, None, None, 44.59, 36.17, 36.02, 27.21, 31.69, 30.87, 31.68, 40.76, 46.04, 41.22, 34.79, 47.47, 36.07],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,pointRadius:3,pointBackgroundColor:GOLD,yAxisID:'y2',spanGaps:true},
-  {label:'Leads/dia',data:[3, 17, 15, 4, 0, 0, 0, 6, 35, 29, 32, 28, 27, 28, 21, 26, 25, 31, 20, 10],type:'bar',backgroundColor:'rgba(96,165,250,.35)',yAxisID:'y'},
-  {label:'Meta R$80',data:[80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0,yAxisID:'y2'}
-]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
-
-// Qualificação
-new Chart(document.getElementById('c-qualif-conj'),{type:'bar',data:{labels:['Brasil ex-SP Capital', 'Centro-Oeste Agro', 'Nordeste Segmentado'],datasets:[
-  {label:'% Negócio',data:[12.2, 19.4, 19.3],backgroundColor:[GOLD,G,Y]},
-  {label:'Leads',data:[126, 97, 88],type:'line',borderColor:B,yAxisID:'y2',pointRadius:4}
-]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:B,font:{size:9}},grid:{display:false}}}}});
-
-new Chart(document.getElementById('c-qualif-cons'),{type:'bar',data:{labels:['FABIANADE OLIVEIRA CARVALHO', 'Marcelo de Albuquerque Pereira', 'VivianeRodrigues'],datasets:[
-  {label:'Leads',data:[186, 125, 37],backgroundColor:'rgba(96,165,250,.5)'},
-  {label:'Negócios',data:[28, 27, 0],backgroundColor:GOLD}
-]},options:{...opt()}});
-
-// Evolução CRM
-new Chart(document.getElementById('c-evolucao-crm'),{type:'line',data:{labels:['05/30', '05/31', '06/01', '06/02', '06/06', '06/07', '06/08', '06/09', '06/10', '06/11', '06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
-  {label:'Leads/dia',data:[3, 17, 15, 4, 7, 34, 27, 27, 28, 27, 26, 21, 26, 24, 31, 20, 11],borderColor:B,backgroundColor:'rgba(96,165,250,.1)',tension:.4,yAxisID:'y'},
-  {label:'Negócios/dia',data:[1, 0, 0, 0, 1, 4, 8, 4, 8, 5, 6, 3, 5, 1, 5, 4, 0],borderColor:GOLD,tension:.4,yAxisID:'y2',pointRadius:4}
-]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{display:false}}}}});
-
-// Evolução CPL
-new Chart(document.getElementById('c-evolucao-cpl'),{type:'line',data:{labels:['05/30', '05/31', '06/01', '06/02', '06/03', '06/04', '06/05', '06/06', '06/07', '06/08', '06/09', '06/10', '06/11', '06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
-  {label:'CPL (R$)',data:[60.03, 65.24, 63.15, 98.38, None, None, None, 44.59, 36.17, 36.02, 27.21, 31.69, 30.87, 31.68, 40.76, 46.04, 41.22, 34.79, 47.47, 36.07],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,spanGaps:true},
-  {label:'Leads/dia',data:[3, 17, 15, 4, 0, 0, 0, 6, 35, 29, 32, 28, 27, 28, 21, 26, 25, 31, 20, 10],type:'bar',backgroundColor:'rgba(96,165,250,.3)',yAxisID:'y2'}
-]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:GOLD,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:B,font:{size:9}},grid:{display:false}}}}});
-
-// Meta filtros
-const META_DATA = {
-  todas: {leads:362,gasto:15023.84,cpl:41.5,impr:114447,alc:59493,ctr:2.03,cpm:131.27},
-  ativa: {leads:311,gasto:11458.33,cpl:36.84,impr:80447,alc:38608,ctr:2.4,cpm:142.43},
-  pausada: {leads:51,gasto:3565.51,cpl:69.91,impr:34000,alc:20885,ctr:1.14,cpm:104.87}
-};
+const META_DATA={todas:{leads:362,gasto:15023.84,cpl:41.5,impr:114447,alc:59493,ctr:2.03,cpm:131.27},ativa:{leads:311,gasto:11458.33,cpl:36.84,impr:80447,alc:38608,ctr:2.4,cpm:142.43},pausada:{leads:51,gasto:3565.51,cpl:69.91,impr:34000,alc:20885,ctr:1.14,cpm:104.87}};
 function fmtMoney(v){return 'R$'+v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}
 function fmtMoney0(v){return 'R$'+Math.round(v).toLocaleString('pt-BR')}
 function fmtNum(v){return Math.round(v).toLocaleString('pt-BR')}
@@ -597,12 +523,11 @@ function metaFilter(){
   const dp=Math.round((1-d.cpl/80)*100);
   bdg.textContent=(dp>=0?dp+'% abaixo':Math.abs(dp)+'% acima');
   bdg.className='bdg '+(dp>=0?'bg':'br');
-  const titleEl=document.getElementById('meta-cpl-title');
-  if(camp==='pausada'){titleEl.textContent='Evolução CPL — Campanha Anterior (30/05–06/06)';}
-  else if(camp==='ativa'){titleEl.textContent='Evolução CPL — Campanha Ativa (07–18/06)';}
-  else{titleEl.textContent='Evolução CPL consolidado — 19 dias (2 campanhas)';}
+  const t=document.getElementById('meta-cpl-title');
+  if(camp==='pausada')t.textContent='Evolução CPL — Campanha Anterior (30/05–06/06)';
+  else if(camp==='ativa')t.textContent='Evolução CPL — Campanha Ativa (07–18/06)';
+  else t.textContent='Evolução CPL consolidado — 19 dias (2 campanhas)';
 }
-
 </script>
 </body>
 </html>
