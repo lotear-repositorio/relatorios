@@ -2,9 +2,9 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ON Paulista — Dashboard Consolidado</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ON Paulista · Relatório D19 · 18/06/2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap');
 :root{--bg:#07090f;--bg2:#0c1018;--bg3:#111520;--bg4:#161c2a;--gold:#c9a96e;--white:#edeae3;--muted:#555f70;--muted2:#8892a0;--green:#22c55e;--red:#ef4444;--yellow:#f59e0b;--blue:#60a5fa;--border:rgba(201,169,110,0.1);--border2:rgba(255,255,255,0.05)}
@@ -168,94 +168,61 @@ canvas{max-height:220px}
     <div class="nav-tab" onclick="show('evolucao')">Evolução</div>
     <div class="nav-tab" onclick="show('acoes')">Ações</div>
   </div>
-  <div class="live">ON Paulista · D9</div>
+  <div class="live">ON Paulista · D19</div>
 </div>
 
 <!-- RETROALIMENTAÇÃO -->
 <div class="page active" id="page-retro">
   <div class="hero">
     <div>
-      <div class="hero-ey">Retroalimentação · Ações executadas desde o relatório de 12/06/2026 (D6)</div>
-      <div class="hero-h1">O que Mudou — <em>Resultado das Ações</em></div>
-      <div class="hero-sub">2 ações executadas · CRM atualizado para 272 leads · Cruzamento CRM × Meta Ads agora 100% preciso (era estimado por estado)</div>
+      <div class="hero-ey">D19 · 2026-05-30 → 2026-06-18 · Relatório atualizado 18/06/2026</div>
+      <div class="hero-h1">Retroalimentação — <em>Validação de Ações</em></div>
+      <div class="hero-sub">3 ações validadas desde 2026-06-15 · 348 leads CRM · 55 negócios · 15,8% qualificação</div>
     </div>
     <div class="hero-stats">
-      <div class="hs"><div class="hs-val" style="color:var(--gold)">+93</div><div class="hs-lbl">Leads novos (12→15/06)</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--green)">+17</div><div class="hs-lbl">Negócios novos</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--green)">100%</div><div class="hs-lbl">Precisão conjunto</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--green)">+76</div><div class="hs-lbl">leads vs D9</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--gold)">+9</div><div class="hs-lbl">negócios vs D9</div></div>
     </div>
   </div>
 
-  <div class="kpis kpis-4">
-    <div class="kpi"><div class="kl">Leads novos</div><div class="kv gold">93</div><div class="kr">179 → 272 (12→15/06)</div><div class="bdg bb">+52%</div></div>
-    <div class="kpi"><div class="kl">Negócios novos</div><div class="kv green">17</div><div class="kr">29 → 46 (4 dias)</div><div class="bdg bg">qualif. estável</div></div>
-    <div class="kpi"><div class="kl">Precisão de conjunto</div><div class="kv green">100%</div><div class="kr">vs 50,2% (heurística estado)</div><div class="bdg bg">Resolvido</div></div>
-    <div class="kpi"><div class="kl">CPL médio Meta</div><div class="kv yellow">R$36,21</div><div class="kr">vs R$33,69 em 12/06</div><div class="bdg by">+7,5%</div></div>
+  <div class="kpis kpis-8">
+    <div class="kpi"><div class="kl">Leads CRM</div><div class="kv green">348</div><div class="kr">D9: 272 (+76)</div><div class="bdg bg">+27.9%</div></div>
+    <div class="kpi"><div class="kl">Negócios</div><div class="kv gold">55</div><div class="kr">D9: 46 (+9)</div><div class="bdg bg">+19.6%</div></div>
+    <div class="kpi"><div class="kl">Qualificação</div><div class="kv yellow">15,8%</div><div class="kr">D9: 16,9%</div><div class="bdg br">-1,1pp</div></div>
+    <div class="kpi"><div class="kl">CPL Meta</div><div class="kv gold">R$41,50</div><div class="kr">D9: R$36,21</div><div class="bdg br">+R$5,29</div></div>
+    <div class="kpi"><div class="kl">Viviane</div><div class="kv green">Removida</div><div class="kr">37 leads redistribuídos</div><div class="bdg bg">✅ Resolvido</div></div>
+    <div class="kpi"><div class="kl">Realocação Budget</div><div class="kv yellow">Executada</div><div class="kr">Brasil↓R$50 / Nordeste↑R$50</div><div class="bdg by">⏳ Aguardando</div></div>
+    <div class="kpi"><div class="kl">Alinhamento Preço</div><div class="kv green">463k</div><div class="kr">Time comercial alinhado</div><div class="bdg bg">✅ Resolvido</div></div>
+    <div class="kpi"><div class="kl">Budget Total/dia</div><div class="kv gold">R$1.050</div><div class="kr">Agro R$300 · Brasil R$350 · NE R$400</div><div class="bdg bg">Estável</div></div>
   </div>
 
-  <div class="g2" style="margin-bottom:14px">
-    <div class="card" style="border-top:3px solid var(--yellow)">
-      <div class="ct">Ação 1 · Escalar Centro-Oeste Agro +20% (R$250 → R$300/dia)</div>
-      <div style="display:flex;gap:14px;margin-bottom:10px">
-        <div style="flex:1;text-align:center;padding:10px;background:var(--bg3)">
-          <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">CPL médio ANTES (D4-D5 · 10-11/06)</div>
-          <div style="font-family:'DM Serif Display',serif;font-size:26px;color:var(--green)">R$21,54</div>
-        </div>
-        <div style="flex:1;text-align:center;padding:10px;background:var(--bg3)">
-          <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">CPL médio DEPOIS (D6-D9 · 12-15/06)</div>
-          <div style="font-family:'DM Serif Display',serif;font-size:26px;color:var(--red)">R$55,46</div>
-        </div>
-      </div>
-      <div class="al warn">
-        <div class="al-ico">⚠️</div>
-        <div><strong>+157% no CPL pós-scale — mas decisão se sustenta pela qualificação</strong><p>Centro-Oeste Agro é o conjunto com o <strong>melhor custo por negócio</strong> (R$154,56) e 2º melhor % negócio (21,1%) dos 3. Acompanhar 48h: se o CPL não normalizar para a faixa de R$25-35, considerar reduzir o orçamento de volta para R$250-270/dia.</p></div>
-      </div>
-    </div>
-    <div class="card" style="border-top:3px solid var(--blue)">
-      <div class="ct">Ação 2 · Texto principal + título alterados em 39 anúncios (ontem, 14/06)</div>
-      <div style="font-size:10px;color:var(--muted2);margin-bottom:10px">"a partir de 347 mil" → "a partir de 463 mil" (+33,4% no preço-âncora) — alteração simultânea em todos os 3 conjuntos</div>
-      <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--muted2)">Brasil ex-SP Capital</span><span>R$41,34 → <strong style="color:var(--green)">R$39,39</strong> (-4,7%)</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--muted2)">Nordeste Segmentado</span><span>R$49,04 → <strong style="color:var(--green)">R$46,09</strong> (-6,0%)</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:11px"><span style="color:var(--muted2)">Centro-Oeste Agro*</span><span>R$35,01 → <strong style="color:var(--red)">R$80,16</strong> (+129%)</span></div>
-      </div>
-      <div class="al info">
-        <div class="al-ico">⏳</div>
-        <div><strong>1 dia de dado — sinal preliminar neutro/positivo</strong><p>Brasil ex-SP e Nordeste (sem mudança de orçamento) NÃO pioraram em 14/06. *Agro está confundido com a Ação 1 (scale recente). Editar texto/título de 39 anúncios pode resetar a fase de aprendizado — aguardar 48-72h antes de qualquer nova alteração de criativo.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" style="border-top:3px solid var(--gold);margin-bottom:14px">
-    <div class="ct">🎯 Achado principal — cruzamento preciso CRM × Meta Ads</div>
-    <div style="font-size:11px;color:var(--muted2);line-height:1.6;margin-bottom:12px">A planilha de campanha (On_Paulista.xlsx) traz o <strong>adset_id em texto</strong> para cada lead. Cruzando por e-mail com o CRM (Clint), obtivemos <strong>223 de 223 leads</strong> da campanha atual mapeados ao conjunto real — 100% de match. Antes, o conjunto era estimado pelo estado do lead (heurística), que acertava apenas <strong>50,2%</strong> dos casos. O resultado muda completamente o diagnóstico:</div>
-    <table class="retro-table">
-      <tr><th>Conjunto</th><th>% Negócio estimado (heurística, relatório 12/06)</th><th>% Negócio real (preciso, hoje)</th><th>Variação</th><th>Leitura</th></tr>
-      <tr><td>Nordeste Segmentado</td><td style="color:var(--red)">5,9%</td><td style="color:var(--green);font-weight:700">26,6%</td><td style="color:var(--green)">+20,7pp</td><td>Era o pior, é o <strong>melhor</strong></td></tr>
-      <tr><td>Centro-Oeste Agro</td><td style="color:var(--green)">33,3%</td><td style="color:var(--yellow);font-weight:700">21,1%</td><td style="color:var(--red)">-12,2pp</td><td>Continua bom, mas era melhor</td></tr>
-      <tr><td>Brasil ex-SP Capital</td><td style="color:var(--gold)">21,8%</td><td style="color:var(--red);font-weight:700">13,6%</td><td style="color:var(--red)">-8,2pp</td><td>Tinha nota boa, é o <strong>pior</strong></td></tr>
+  <div class="card" style="margin-bottom:16px">
+    <div class="ct">Ações executadas desde 15/06/2026 — Veredicto D19</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px">
+      <thead><tr style="color:var(--muted2);text-align:left;border-bottom:1px solid var(--border2)">
+        <th style="padding:8px 4px;width:35%">Ação</th>
+        <th style="padding:8px 4px;width:12%">Veredicto</th>
+        <th style="padding:8px 4px">Evidência</th>
+      </tr></thead>
+      <tbody><tr>
+          <td>⏳ Realocação de orçamento Brasil ex-SP Capital R$400→R$350 e Nordeste R$350→R$400</td>
+          <td><span class="bdg by">Aguardando</span></td>
+          <td style="color:var(--muted2);font-size:11px">Executada em 17-18/06. D19 parcial: Brasil ex-SP CPL R$34,20 (era R$34,20 consolidado), Nordeste CPL R$44,58 (era R$43,52). Volume Nordeste +D, dados ainda misturados com período anterior. Aguardar 48-72h para isolamento do efeito.</td>
+        </tr><tr>
+          <td>✅ Viviane Rodrigues removida do atendimento de leads ON Paulista</td>
+          <td><span class="bdg bg">Positivo</span></td>
+          <td style="color:var(--muted2);font-size:11px">Leads realocados para Fabiana e Marcelo. Risco de 0% qualificação eliminado estruturalmente. Impacto: taxa de qualificação geral deverá subir no próximo ciclo com redistribuição dos leads.</td>
+        </tr><tr>
+          <td>✅ Alinhamento do time comercial sobre atualização de preço 347k→463k</td>
+          <td><span class="bdg bg">Positivo</span></td>
+          <td style="color:var(--muted2);font-size:11px">Time alinhado. Leads já no funil (Curioso/Negócio) com expectativa de preço antigo sendo abordados com novo posicionamento.</td>
+        </tr></tbody>
     </table>
-    <div style="font-size:11px;color:var(--muted2);line-height:1.6;margin:12px 0 8px">Cruzando com o gasto Meta (07-15/06), o <strong>custo por negócio</strong> confirma o novo ranking:</div>
-    <table class="retro-table">
-      <tr><th>Conjunto</th><th>Gasto (9d)</th><th>Negócios</th><th>Custo/negócio</th><th>Orçamento/dia</th></tr>
-      <tr><td>Centro-Oeste Agro</td><td>R$2.318,34</td><td>15</td><td style="color:var(--green);font-weight:700">R$154,56</td><td>R$300 (29%)</td></tr>
-      <tr><td>Nordeste Segmentado</td><td>R$2.872,07</td><td>17</td><td style="color:var(--yellow);font-weight:700">R$168,95</td><td>R$350 (33%)</td></tr>
-      <tr><td>Brasil ex-SP Capital</td><td>R$3.136,96</td><td>12</td><td style="color:var(--red);font-weight:700">R$261,41</td><td>R$400 (38%)</td></tr>
-    </table>
-    <div class="al bad" style="margin-top:10px">
-      <div class="al-ico">🚨</div>
-      <div><strong>Brasil ex-SP Capital: 38% do orçamento, pior custo/negócio (69% mais caro que Agro)</strong><p>É o conjunto que recebe o MAIOR investimento diário (R$400) e entrega o PIOR retorno por negócio gerado (R$261,41 vs R$154,56 do Agro). É o ajuste de maior impacto financeiro disponível para o próximo ciclo.</p></div>
-    </div>
   </div>
 
-  <div class="g2" style="margin-bottom:14px">
-    <div class="card"><div class="ct">CPL diário por conjunto — 9 dias (D1-D9, D9 parcial)</div><div class="cw"><canvas id="c-retro-cpl"></canvas></div></div>
-    <div class="card"><div class="ct">% Negócio por conjunto — heurística (estimado) vs real (preciso)</div><div class="cw"><canvas id="c-retro-comp"></canvas></div></div>
-  </div>
-
-  <div class="al ok">
-    <div class="al-ico">✅</div>
-    <div><strong>Recomendação para os próximos 2-3 dias: NÃO fazer uma 3ª mudança agora</strong><p>As 2 ações recentes (scale do Agro + edição de 39 criativos) ainda não tiveram efeito isolado — uma 3ª variável simultânea (realocação de orçamento) tornaria impossível atribuir causa no próximo relatório. Aguardar D+2/D+3 (17-18/06) para confirmar normalização do CPL. Se confirmado, a <strong>prioridade #1 do próximo ciclo</strong> é realocar parte do orçamento de Brasil ex-SP Capital → Nordeste Segmentado (ex.: R$400→R$350 / R$350→R$400), mantendo Agro estável até estabilizar.</p></div>
+  <div class="g2">
+    <div class="card"><div class="ct">Evolução CPL consolidado — últimos 7 dias</div><div class="cw"><canvas id="c-retro-cpl"></canvas></div></div>
+    <div class="card"><div class="ct">Leads/dia consolidado — últimos 7 dias</div><div class="cw"><canvas id="c-retro-leads"></canvas></div></div>
   </div>
 </div>
 
@@ -263,190 +230,63 @@ canvas{max-height:220px}
 <div class="page" id="page-funil">
   <div class="hero">
     <div>
-      <div class="hero-ey">CRM Consolidado · 30/05 → 15/06/2026 · Projeto único</div>
-      <div class="hero-h1">ON Paulista — <em>Funil de Conversão</em></div>
-      <div class="hero-sub">272 leads · Lead → Curioso → Negócio · Todos os criativos e conjuntos</div>
+      <div class="hero-ey">CRM Clint · 2026-05-30 → 2026-06-18 · D19 · Precisão 92,2% via planilha</div>
+      <div class="hero-h1">Funil CRM — <em>Performance de Leads</em></div>
+      <div class="hero-sub">348 leads · 55 negócios · 15,8% qualificação · 63 perdidos</div>
     </div>
     <div class="hero-stats">
-      <div class="hs"><div class="hs-val" style="color:var(--gold)">272</div><div class="hs-lbl">Total leads</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--green)">46</div><div class="hs-lbl">Negócios</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--green)">16,9%</div><div class="hs-lbl">Taxa qualif.</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--green)">15,8%</div><div class="hs-lbl">qualificação</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--gold)">55</div><div class="hs-lbl">negócios</div></div>
     </div>
   </div>
   <div class="kpis kpis-8">
-    <div class="kpi"><div class="kl">Total leads</div><div class="kv gold">272</div><div class="kr">30/05 → 15/06</div><div class="bdg bb">17 dias</div></div>
-    <div class="kpi"><div class="kl">Stage Lead</div><div class="kv blue">122</div><div class="kr">44,9% do total</div><div class="bdg by">Topo funil</div></div>
-    <div class="kpi"><div class="kl">Stage Curioso</div><div class="kv yellow">104</div><div class="kr">38,2% do total</div><div class="bdg by">Meio funil</div></div>
-    <div class="kpi"><div class="kl">Negócio</div><div class="kv green">46</div><div class="kr">16,9% do total</div><div class="bdg bg">Qualificados</div></div>
-    <div class="kpi"><div class="kl">Avançaram do Lead</div><div class="kv yellow">55,1%</div><div class="kr">150 de 272</div><div class="bdg by">Lead→Curioso</div></div>
-    <div class="kpi"><div class="kl">Curioso→Negócio</div><div class="kv green">30,7%</div><div class="kr">46 de 150</div><div class="bdg bg">Conversão</div></div>
-    <div class="kpi"><div class="kl">Objetivo: Investir</div><div class="kv green">71,3%</div><div class="kr">194 de 272</div><div class="bdg bg">Perfil certo</div></div>
-    <div class="kpi"><div class="kl">Campanha atual (07-06)</div><div class="kv gold">82,0%</div><div class="kr">223 de 272</div><div class="bdg bb">Ativa</div></div>
+    <div class="kpi"><div class="kl">Total Leads</div><div class="kv green">348</div><div class="kr">D19</div><div class="bdg bg">30/05→18/06</div></div>
+    <div class="kpi"><div class="kl">Negócios</div><div class="kv gold">55</div><div class="kr">15,8% do total</div><div class="bdg bg">Qualificados</div></div>
+    <div class="kpi"><div class="kl">Curioso+</div><div class="kv yellow">187</div><div class="kr">53,7% do total</div><div class="bdg bg">Engajados</div></div>
+    <div class="kpi"><div class="kl">Perdidos</div><div class="kv red">63</div><div class="kr">18,1% do total</div><div class="bdg br">Descartados</div></div>
+    <div class="kpi"><div class="kl">Abertos</div><div class="kv blue">285</div><div class="kr">Em tratamento</div><div class="bdg bb">Pipeline</div></div>
+    <div class="kpi"><div class="kl">Precisão CRM×Meta</div><div class="kv green">92,2%</div><div class="kr">Via planilha</div><div class="bdg bg">Preciso</div></div>
+    <div class="kpi"><div class="kl">Lead→Negócio</div><div class="kv gold">15,8%</div><div class="kr">Meta: 15%</div><div class="bdg bg">Acima</div></div>
+    <div class="kpi"><div class="kl">Custo/Negócio</div><div class="kv gold">R$273,16</div><div class="kr">CPL×(1/15,8%)</div><div class="bdg bb">Calculado</div></div>
   </div>
-  <div class="g13">
-    <div class="card">
-      <div class="ct">Funil consolidado — 272 leads</div>
-      <div class="funil-wrap">
-        <div class="funil-row fl">
-          <div class="f-ico">📥</div>
-          <div class="f-lbl">Lead</div>
-          <div class="f-bar-wrap"><div class="f-bar" style="width:100%;background:rgba(96,165,250,.4)">122 ainda aqui + 150 avançaram</div></div>
-          <div class="f-stats"><div class="f-count" style="color:var(--blue)">272</div><div class="f-pct">100% entrada</div></div>
-        </div>
-        <div class="funil-conv">
-          <div class="conv-pill" style="background:rgba(96,165,250,.15);color:var(--blue)">55,1% avançaram ↓</div>
-          <span style="color:var(--muted)">122 (44,9%) ainda em Lead</span>
-        </div>
-        <div class="funil-row fc">
-          <div class="f-ico">🤔</div>
-          <div class="f-lbl">Curioso</div>
-          <div class="f-bar-wrap"><div class="f-bar" style="width:55.1%;background:rgba(245,158,11,.45)">104 aqui + 46 avançaram</div></div>
-          <div class="f-stats"><div class="f-count" style="color:var(--yellow)">150</div><div class="f-pct">55,1% do total</div></div>
-        </div>
-        <div class="funil-conv">
-          <div class="conv-pill" style="background:rgba(34,197,94,.15);color:var(--green)">30,7% viraram Negócio ↓</div>
-          <span style="color:var(--muted)">104 (69,3%) ainda em Curioso</span>
-        </div>
-        <div class="funil-row fn">
-          <div class="f-ico">💼</div>
-          <div class="f-lbl">Negócio</div>
-          <div class="f-bar-wrap"><div class="f-bar" style="width:16.9%;background:rgba(34,197,94,.7)">16,9% do total</div></div>
-          <div class="f-stats"><div class="f-count" style="color:var(--green)">46</div><div class="f-pct">16,9% qualif.</div></div>
-        </div>
-      </div>
-      <div style="margin-top:14px;padding:10px 12px;background:rgba(34,197,94,.06);border-left:2px solid var(--green)">
-        <div style="font-size:10px;color:var(--muted2)">Benchmark: 10–20% de qualificação para imóvel de alto ticket. Nossa taxa de 16,9% está no intervalo saudável e estável frente aos 16,2% do relatório anterior (29 de 179).</div>
-      </div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <div class="card">
-        <div class="ct">Distribuição do funil e perfil de interesse</div>
-        <div class="g2">
-          <div class="cw"><canvas id="c-funil-donut"></canvas></div>
-          <div class="cw"><canvas id="c-interesse-funil"></canvas></div>
-        </div>
-      </div>
-      <div class="g2">
-        <div class="card">
-          <div class="ct">Top estados de origem</div>
-          <div style="padding:4px 0">
-<div class="tl-row"><div class="tl-lbl">SP</div><div class="tl-track"><div class="tl-fill" style="width:100.0%;background:rgba(239,68,68,.4);color:var(--white)">107 leads</div></div><div class="tl-val">107</div></div>
-<div class="tl-row"><div class="tl-lbl">MT</div><div class="tl-track"><div class="tl-fill" style="width:14.0%;background:rgba(34,197,94,.5);color:var(--white)">15 leads</div></div><div class="tl-val">15</div></div>
-<div class="tl-row"><div class="tl-lbl">MG</div><div class="tl-track"><div class="tl-fill" style="width:13.1%;background:rgba(201,169,110,.5);color:var(--white)">14 leads</div></div><div class="tl-val">14</div></div>
-<div class="tl-row"><div class="tl-lbl">BA</div><div class="tl-track"><div class="tl-fill" style="width:9.3%;background:rgba(201,169,110,.4);color:var(--white)">10 leads</div></div><div class="tl-val">10</div></div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="ct">122 leads parados em Lead</div>
-          <div style="font-family:'DM Serif Display',serif;font-size:40px;color:var(--red);line-height:1;margin-bottom:6px">122</div>
-          <div style="font-size:12px;color:var(--muted2);margin-bottom:10px">44,9% nunca avançaram</div>
-          <div class="al warn">
-            <div class="al-ico">⚠️</div>
-            <div><strong>Verificar com SDR</strong><p>Quantos foram contactados? Leads sem contato nos primeiros 5 min têm 90% menos chance de converter.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="g2" style="margin-bottom:16px">
+    <div class="card"><div class="ct">Funil Lead → Negócio</div><div class="cw"><canvas id="c-funil"></canvas></div></div>
+    <div class="card"><div class="ct">Interesse — leads e % negócio</div><div class="cw"><canvas id="c-interesse"></canvas></div></div>
   </div>
+  <div class="kpis" style="grid-template-columns:repeat(3,1fr)"><div class="kpi"><div class="kl">investir</div><div class="kv gold">251</div><div class="kr">46 negócios</div><div class="bdg bg">18,3%</div></div><div class="kpi"><div class="kl">morar</div><div class="kv gold">56</div><div class="kr">7 negócios</div><div class="bdg bb">12,5%</div></div><div class="kpi"><div class="kl">investimento para renda (locação)</div><div class="kv gold">26</div><div class="kr">2 negócios</div><div class="bdg bb">7,7%</div></div><div class="kpi"><div class="kl">moradia própria</div><div class="kv gold">8</div><div class="kr">0 negócios</div><div class="bdg bb">0,0%</div></div><div class="kpi"><div class="kl">ainda estou avaliando</div><div class="kv gold">7</div><div class="kr">0 negócios</div><div class="bdg bb">0,0%</div></div></div>
 </div>
 
 <!-- CRIATIVOS -->
 <div class="page" id="page-criativos">
   <div class="hero">
     <div>
-      <div class="hero-ey">Análise de criativos · Qualidade pelo % de Negócio gerado</div>
-      <div class="hero-h1">Criativos — <em>Volume vs Qualidade</em></div>
-      <div class="hero-sub">13 criativos · % Negócio = indicador de qualidade do lead gerado</div>
+      <div class="hero-ey">CRM Clint · Cruzamento preciso via planilha · D19</div>
+      <div class="hero-h1">Criativos — <em>Ranking por % Negócio</em></div>
+      <div class="hero-sub">Criativo dominante: 05 - 01 - Dinamico - Lotear - 06-06-2026 · 50 negócios · 17,9% qualificação</div>
     </div>
     <div class="hero-stats">
-      <div class="hs"><div class="hs-val" style="color:var(--gold)">13</div><div class="hs-lbl">Criativos</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--green)">25%</div><div class="hs-lbl">Melhor</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--red)">0%</div><div class="hs-lbl">Pior</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--gold)">17,9%</div><div class="hs-lbl">top criativo</div></div>
     </div>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px">
-    <div class="cr-card cr-top">
-      <div class="cr-badge bg">🏆 Melhor qualif.</div>
-      <div class="cr-name">01 - Estático · 06-06-2026</div>
-      <div class="cr-pct" style="color:var(--green)">25,0%</div>
-      <div class="cr-sub">4 leads · 1 negócio</div>
-      <div class="stacked-bar"><div class="sb-l" style="width:25.0%"></div><div class="sb-c" style="width:50.0%"></div><div class="sb-n" style="width:25.0%"></div></div>
-      <div class="cr-legend"><span><span class="cr-dot" style="background:rgba(96,165,250,.6)"></span>Lead:1</span><span><span class="cr-dot" style="background:rgba(245,158,11,.6)"></span>Cur:2</span><span><span class="cr-dot" style="background:rgba(34,197,94,.8)"></span>Neg:1</span></div>
-    </div>
-    <div class="cr-card cr-top" style="border-color:rgba(34,197,94,.3)">
-      <div class="cr-badge bg">⭐ Dominante</div>
-      <div class="cr-name">05-01 - Dinâmico Lotear · 06-06-2026</div>
-      <div class="cr-pct" style="color:var(--green)">20,5%</div>
-      <div class="cr-sub">205 leads · 42 negócios · 75,4% do total</div>
-      <div class="stacked-bar"><div class="sb-l" style="width:40.5%"></div><div class="sb-c" style="width:39.0%"></div><div class="sb-n" style="width:20.5%"></div></div>
-      <div class="cr-legend"><span><span class="cr-dot" style="background:rgba(96,165,250,.6)"></span>Lead:83</span><span><span class="cr-dot" style="background:rgba(245,158,11,.6)"></span>Cur:80</span><span><span class="cr-dot" style="background:rgba(34,197,94,.8)"></span>Neg:42</span></div>
-    </div>
-    <div class="cr-card cr-mid">
-      <div class="cr-name">01 - Dinâmico Lotear · 06-06-2026</div>
-      <div class="cr-pct" style="color:var(--yellow)">16,7%</div>
-      <div class="cr-sub">6 leads · 1 negócio</div>
-      <div class="stacked-bar"><div class="sb-l" style="width:33.3%"></div><div class="sb-c" style="width:50.0%"></div><div class="sb-n" style="width:16.7%"></div></div>
-      <div class="cr-legend"><span><span class="cr-dot" style="background:rgba(96,165,250,.6)"></span>Lead:2</span><span><span class="cr-dot" style="background:rgba(245,158,11,.6)"></span>Cur:3</span><span><span class="cr-dot" style="background:rgba(34,197,94,.8)"></span>Neg:1</span></div>
-    </div>
-    <div class="cr-card cr-mid">
-      <div class="cr-name">02 - Estático · 06-06-2026</div>
-      <div class="cr-pct" style="color:var(--yellow)">16,7%</div>
-      <div class="cr-sub">6 leads · 1 negócio</div>
-      <div class="stacked-bar"><div class="sb-l" style="width:33.3%"></div><div class="sb-c" style="width:50.0%"></div><div class="sb-n" style="width:16.7%"></div></div>
-      <div class="cr-legend"><span><span class="cr-dot" style="background:rgba(96,165,250,.6)"></span>Lead:2</span><span><span class="cr-dot" style="background:rgba(245,158,11,.6)"></span>Cur:3</span><span><span class="cr-dot" style="background:rgba(34,197,94,.8)"></span>Neg:1</span></div>
-    </div>
-    <div class="cr-card cr-low">
-      <div class="cr-badge br">⚠️ Baixa qualif.</div>
-      <div class="cr-name">01 - Estático · 30-05-2026</div>
-      <div class="cr-pct" style="color:var(--red)">3,7%</div>
-      <div class="cr-sub">27 leads · 1 negócio · 74,1% parados em Lead</div>
-      <div class="stacked-bar"><div class="sb-l" style="width:74.1%"></div><div class="sb-c" style="width:22.2%"></div><div class="sb-n" style="width:3.7%"></div></div>
-      <div class="cr-legend"><span><span class="cr-dot" style="background:rgba(96,165,250,.6)"></span>Lead:20</span><span><span class="cr-dot" style="background:rgba(245,158,11,.6)"></span>Cur:6</span><span><span class="cr-dot" style="background:rgba(34,197,94,.8)"></span>Neg:1</span></div>
-    </div>
-    <div class="cr-card cr-low">
-      <div class="cr-badge br">0% negócio</div>
-      <div class="cr-name">Demais criativos</div>
-      <div class="cr-pct" style="color:var(--red)">0%</div>
-      <div class="cr-sub">24 leads combinados (8 criativos) · 0 negócios</div>
-      <div class="stacked-bar"><div class="sb-l" style="width:58.3%"></div><div class="sb-c" style="width:41.7%"></div></div>
-      <div class="cr-legend"><span><span class="cr-dot" style="background:rgba(96,165,250,.6)"></span>Lead:14</span><span><span class="cr-dot" style="background:rgba(245,158,11,.6)"></span>Cur:10</span><span><span class="cr-dot" style="background:rgba(34,197,94,.8)"></span>Neg:0</span></div>
-    </div>
+  <div class="g2" style="margin-bottom:16px">
+    <div class="card"><div class="ct">Leads e % Negócio por criativo</div><div class="cw"><canvas id="c-criativos-bar"></canvas></div></div>
+    <div class="card"><div class="ct">Distribuição de negócios por criativo</div><div class="cw"><canvas id="c-criativos-pie"></canvas></div></div>
   </div>
-  <div class="g2">
-    <div class="card"><div class="ct">Volume por criativo</div><div class="cw"><canvas id="c-cr-volume"></canvas></div></div>
-    <div class="card"><div class="ct">% Negócio por criativo</div><div class="cw"><canvas id="c-cr-qualidade"></canvas></div></div>
-  </div>
+  <div class="g4"><div class="cc cc-green"><div class="cc-star bg">TOP CRIATIVO</div><div class="cc-name">05 - 01 - Dinamico - Lotear - 06-06-2026</div><div class="cc-cpl" style="color:var(--gold)">17,9%</div><div class="cc-leads">279 leads · 50 negócios</div></div><div class="cc cc-gold"><div class="cc-name">01 - Dinamico - Lotear - 06-06-2026</div><div class="cc-cpl" style="color:var(--gold)">16,7%</div><div class="cc-leads">6 leads · 1 negócios</div></div><div class="cc "><div class="cc-name">02 - Estatico - 06-06-2026</div><div class="cc-cpl" style="color:var(--gold)">20,0%</div><div class="cc-leads">5 leads · 1 negócios</div></div><div class="cc "><div class="cc-name">01 - Estatico - 06-06-2026</div><div class="cc-cpl" style="color:var(--gold)">20,0%</div><div class="cc-leads">5 leads · 1 negócios</div></div><div class="cc "><div class="cc-name">01 - Estatico - 30-05-2026</div><div class="cc-cpl" style="color:var(--gold)">7,7%</div><div class="cc-leads">13 leads · 1 negócios</div></div><div class="cc "><div class="cc-name">01 - Dinamico - Empreendimento - 06-06-2026</div><div class="cc-cpl" style="color:var(--gold)">0,0%</div><div class="cc-leads">3 leads · 0 negócios</div></div><div class="cc "><div class="cc-name">05 - Estatico - 06-06-2026</div><div class="cc-cpl" style="color:var(--gold)">0,0%</div><div class="cc-leads">6 leads · 0 negócios</div></div></div>
 </div>
 
 <!-- HORÁRIOS -->
 <div class="page" id="page-horarios">
   <div class="hero">
     <div>
-      <div class="hero-ey">Análise temporal · 272 leads · Escala de 1 hora</div>
-      <div class="hero-h1">Quando os Leads <em>Chegam</em></div>
-      <div class="hero-sub">60,3% fora do horário comercial · Pico às 20h · Dado crítico para SDR</div>
+      <div class="hero-ey">CRM Clint · Horário de entrada do lead · D19</div>
+      <div class="hero-h1">Horários — <em>Distribuição de Leads e Negócios</em></div>
+      <div class="hero-sub">348 leads · pico 20h–23h · SDR crítico noturno</div>
     </div>
-    <div class="hero-stats">
-      <div class="hs"><div class="hs-val" style="color:var(--red)">20h</div><div class="hs-lbl">Pico do dia</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--red)">60,3%</div><div class="hs-lbl">Fora comercial</div></div>
-    </div>
-  </div>
-  <div class="kpis kpis-4">
-    <div class="kpi"><div class="kl">Comercial 9h–18h</div><div class="kv green">51</div><div class="kr">seg–sex apenas</div><div class="bdg bg">18,8%</div></div>
-    <div class="kpi"><div class="kl">Noite 19h–23h</div><div class="kv red">107</div><div class="kr">Todos os dias</div><div class="bdg br">39,3% ← CRÍTICO</div></div>
-    <div class="kpi"><div class="kl">Madrugada 0h–6h</div><div class="kv" style="color:var(--blue)">46</div><div class="kr">Fora do alcance</div><div class="bdg bb">16,9%</div></div>
-    <div class="kpi"><div class="kl">Manhã 7h–8h</div><div class="kv blue">11</div><div class="kr">Pré-comercial</div><div class="bdg bb">4,0%</div></div>
-  </div>
-  <div class="card" style="margin-bottom:16px">
-    <div class="ct">Leads por hora do dia — heatmap</div>
-    <div class="hm-label">
-      <div class="hm-lbl">0</div><div class="hm-lbl">1</div><div class="hm-lbl">2</div><div class="hm-lbl">3</div><div class="hm-lbl">4</div><div class="hm-lbl">5</div><div class="hm-lbl">6</div><div class="hm-lbl">7</div><div class="hm-lbl">8</div><div class="hm-lbl">9</div><div class="hm-lbl">10</div><div class="hm-lbl">11</div><div class="hm-lbl">12</div><div class="hm-lbl">13</div><div class="hm-lbl">14</div><div class="hm-lbl">15</div><div class="hm-lbl">16</div><div class="hm-lbl">17</div><div class="hm-lbl">18</div><div class="hm-lbl">19</div><div class="hm-lbl">20</div><div class="hm-lbl">21</div><div class="hm-lbl">22</div><div class="hm-lbl">23</div>
-    </div>
-    <div class="heatmap" id="heatmap"></div>
   </div>
   <div class="g2">
-    <div class="card"><div class="ct">Leads por hora — barras</div><div class="cw"><canvas id="c-hora"></canvas></div></div>
-    <div class="card"><div class="ct">Distribuição por período</div><div class="cw"><canvas id="c-periodo-donut"></canvas></div></div>
+    <div class="card"><div class="ct">Leads por hora do dia (0–23h)</div><div class="cw" style="height:260px"><canvas id="c-horas"></canvas></div></div>
+    <div class="card"><div class="ct">Negócios por hora do dia</div><div class="cw" style="height:260px"><canvas id="c-neg-horas"></canvas></div></div>
   </div>
 </div>
 
@@ -454,31 +294,14 @@ canvas{max-height:220px}
 <div class="page" id="page-diasemana">
   <div class="hero">
     <div>
-      <div class="hero-ey">Análise semanal · 272 leads</div>
-      <div class="hero-h1">Leads por <em>Dia da Semana</em></div>
-      <div class="hero-sub">Domingo lidera com 28,3% · Fim de semana = 39,7%</div>
+      <div class="hero-ey">CRM Clint · Dia de entrada do lead · D19</div>
+      <div class="hero-h1">Dias da Semana — <em>Volume e Qualificação</em></div>
+      <div class="hero-sub">Domingo maior volume (77 leads · 22,1%) · Sexta menor volume</div>
     </div>
-    <div class="hero-stats">
-      <div class="hs"><div class="hs-val" style="color:var(--red)">Dom</div><div class="hs-lbl">Maior dia</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--yellow)">39,7%</div><div class="hs-lbl">Fim de semana</div></div>
-    </div>
-  </div>
-  <div class="kpis kpis-7">
-    <div class="kpi"><div class="kl">Segunda</div><div class="kv green">48</div><div class="kr">17,6%</div><div class="bdg bg">2º maior</div></div>
-    <div class="kpi"><div class="kl">Terça</div><div class="kv gold">34</div><div class="kr">12,5%</div><div class="bdg bb">3º</div></div>
-    <div class="kpi"><div class="kl">Quarta</div><div class="kv gold">28</div><div class="kr">10,3%</div><div class="bdg bb">4º</div></div>
-    <div class="kpi"><div class="kl">Quinta</div><div class="kv yellow">27</div><div class="kr">9,9%</div><div class="bdg by">5º</div></div>
-    <div class="kpi"><div class="kl">Sexta</div><div class="kv yellow">27</div><div class="kr">9,9%</div><div class="bdg by">6º</div></div>
-    <div class="kpi"><div class="kl">Sábado</div><div class="kv yellow">31</div><div class="kr">11,4%</div><div class="bdg by">Baixo FDS</div></div>
-    <div class="kpi"><div class="kl">Domingo</div><div class="kv red">77</div><div class="kr">28,3%</div><div class="bdg br">Maior dia</div></div>
   </div>
   <div class="g2">
     <div class="card"><div class="ct">Leads por dia da semana</div><div class="cw"><canvas id="c-diasemana"></canvas></div></div>
-    <div class="card"><div class="ct">Semana comercial vs fim de semana</div><div class="cw"><canvas id="c-fds"></canvas></div></div>
-  </div>
-  <div class="al bad" style="margin-top:14px">
-    <div class="al-ico">🚨</div>
-    <div><strong>Domingo = 28,3% dos leads sem cobertura SDR</strong><p>77 leads chegam domingo. Sem atendimento em 5 min a taxa de conversão cai 90%. Automação WhatsApp + SDR de plantão aos domingos continua prioridade — fim de semana já representa 39,7% do volume total.</p></div>
+    <div class="card"><div class="ct">Negócios por dia da semana</div><div class="cw"><canvas id="c-neg-diasemana"></canvas></div></div>
   </div>
 </div>
 
@@ -486,74 +309,82 @@ canvas{max-height:220px}
 <div class="page" id="page-meta">
   <div class="hero">
     <div>
-      <div class="hero-ey">Meta Ads MCP · 30/05 → 15/06/2026 (17 dias, 2 campanhas, D9* parcial)</div>
+      <div class="hero-ey">Meta Ads MCP · 30/05→18/06/2026 (D19, 2 campanhas, parcial 18/06)</div>
       <div class="hero-h1">Meta Ads — <em>Performance Consolidada</em></div>
-      <div class="hero-sub">282 leads · R$11.968 gastos · CPL R$42,47 · 3 conjuntos ativos + 1 campanha anterior pausada</div>
+      <div class="hero-sub">362 leads · R$15.024 gastos · CPL R$41,50 · 3 conjuntos ativos + campanha anterior pausada</div>
     </div>
     <div class="hero-stats">
-      <div class="hs"><div class="hs-val" style="color:var(--yellow)">R$42,47</div><div class="hs-lbl">CPL médio</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--gold)">282</div><div class="hs-lbl">Leads Meta</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--yellow)">R$41,50</div><div class="hs-lbl">CPL médio</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--gold)">362</div><div class="hs-lbl">Leads Meta</div></div>
     </div>
   </div>
-
   <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;align-items:center">
     <div style="font-size:10px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px">Filtros:</div>
     <select id="meta-f-campanha" onchange="metaFilter()" style="background:var(--bg3);border:1px solid var(--border2);color:var(--white);font-size:11px;padding:6px 10px;border-radius:4px;font-family:'Inter',sans-serif">
       <option value="todas">Todas as campanhas</option>
-      <option value="ativa">Apenas Ativa (07–15/06)</option>
+      <option value="ativa">Apenas Ativa (07–18/06)</option>
       <option value="pausada">Apenas Anterior (30/05–06/06)</option>
     </select>
     <select id="meta-f-periodo" onchange="metaFilter()" style="background:var(--bg3);border:1px solid var(--border2);color:var(--white);font-size:11px;padding:6px 10px;border-radius:4px;font-family:'Inter',sans-serif">
-      <option value="17">Últimos 17 dias</option>
-      <option value="9">Últimos 9 dias (campanha ativa)</option>
+      <option value="19">Últimos 19 dias</option>
+      <option value="12">Últimos 12 dias (campanha ativa)</option>
       <option value="7">Últimos 7 dias</option>
     </select>
   </div>
-
   <div class="kpis kpis-8" id="meta-kpis">
-    <div class="kpi"><div class="kl">Gasto total</div><div class="kv gold" id="meta-k-gasto">R$11.968</div><div class="kr">17 dias</div><div class="bdg bb">30/05–15/06</div></div>
-    <div class="kpi"><div class="kl">Leads Meta</div><div class="kv green" id="meta-k-leads">282</div><div class="kr">2 campanhas</div><div class="bdg bg">Ativo</div></div>
-    <div class="kpi"><div class="kl">CPL médio</div><div class="kv yellow" id="meta-k-cpl">R$42,47</div><div class="kr">Meta: R$80</div><div class="bdg bg" id="meta-k-cpl-bdg">47% abaixo</div></div>
-    <div class="kpi"><div class="kl">Melhor CPL</div><div class="kv green">R$31,33</div><div class="kr">Centro-Oeste Agro</div><div class="bdg bg">Top</div></div>
-    <div class="kpi"><div class="kl">Impressões</div><div class="kv blue" id="meta-k-impr">96.776</div><div class="kr">Soma 2 campanhas</div><div class="bdg bg">17 dias</div></div>
-    <div class="kpi"><div class="kl">Alcance</div><div class="kv gold" id="meta-k-alc">53.271</div><div class="kr">Pode haver overlap*</div><div class="bdg bb">Estimado</div></div>
-    <div class="kpi"><div class="kl">CTR médio</div><div class="kv gold" id="meta-k-ctr">1,87%</div><div class="kr">Bench: 0,8–1,5%</div><div class="bdg bg">Acima bench</div></div>
-    <div class="kpi"><div class="kl">CPM médio</div><div class="kv gold" id="meta-k-cpm">R$124</div><div class="kr">Bench: R$80–140</div><div class="bdg bg">Normal</div></div>
+    <div class="kpi"><div class="kl">Gasto total</div><div class="kv gold" id="meta-k-gasto">R$15.024</div><div class="kr">19 dias</div><div class="bdg bb">30/05–18/06</div></div>
+    <div class="kpi"><div class="kl">Leads Meta</div><div class="kv green" id="meta-k-leads">362</div><div class="kr">2 campanhas</div><div class="bdg bg">Ativo</div></div>
+    <div class="kpi"><div class="kl">CPL médio</div><div class="kv yellow" id="meta-k-cpl">R$41,50</div><div class="kr">Meta: R$80</div><div class="bdg bg" id="meta-k-cpl-bdg">48% abaixo</div></div>
+    <div class="kpi"><div class="kl">Melhor CPL</div><div class="kv green">R$33,26</div><div class="kr">Centro-Oeste Agro</div><div class="bdg bg">Top</div></div>
+    <div class="kpi"><div class="kl">Impressões</div><div class="kv blue" id="meta-k-impr">114.447</div><div class="kr">Soma 2 campanhas</div><div class="bdg bg">19 dias</div></div>
+    <div class="kpi"><div class="kl">Alcance</div><div class="kv gold" id="meta-k-alc">59.493</div><div class="kr">Pode haver overlap*</div><div class="bdg bb">Estimado</div></div>
+    <div class="kpi"><div class="kl">CTR médio</div><div class="kv gold" id="meta-k-ctr">2,03%</div><div class="kr">Bench: 0,8–1,5%</div><div class="bdg bg">Acima bench</div></div>
+    <div class="kpi"><div class="kl">CPM médio</div><div class="kv gold" id="meta-k-cpm">R$131</div><div class="kr">Bench: R$80–140</div><div class="bdg bg">Normal</div></div>
   </div>
-
-  <div class="g4" style="margin-bottom:16px">
-    <div class="cc cc-green">
-      <div class="cc-star bg">MELHOR CPL</div>
-      <div class="cc-name">Centro-Oeste Agro</div>
-      <div class="cc-cpl" style="color:var(--green)">R$31,33</div>
-      <div class="cc-leads">74 leads · R$2.318 gastos · R$300/dia</div>
-      <div class="cc-m"><div><div class="cc-ml">CPM</div><div class="cc-mv" style="color:var(--yellow)">R$159</div></div><div><div class="cc-ml">CTR</div><div class="cc-mv">2,1%</div></div><div><div class="cc-ml">Freq.</div><div class="cc-mv">1,58</div></div></div>
-    </div>
-    <div class="cc cc-gold">
+  <div class="g4" style="margin-bottom:16px"><div class="cc cc-gold">
       <div class="cc-star bb">MAIOR VOLUME</div>
       <div class="cc-name">Brasil ex-SP Capital</div>
-      <div class="cc-cpl" style="color:var(--gold)">R$34,86</div>
-      <div class="cc-leads">90 leads · R$3.137 gastos · R$400/dia</div>
-      <div class="cc-m"><div><div class="cc-ml">CPM</div><div class="cc-mv">R$118</div></div><div><div class="cc-ml">CTR</div><div class="cc-mv" style="color:var(--green)">2,7%</div></div><div><div class="cc-ml">Freq.</div><div class="cc-mv">1,71</div></div></div>
-    </div>
-    <div class="cc cc-yellow">
+      <div class="cc-cpl" style="color:var(--gold)">R$34,20</div>
+      <div class="cc-leads">126 leads · R$4.309 · R$400/dia</div>
+      <div class="cc-m">
+        <div><div class="cc-ml">CPM</div><div class="cc-mv">R$126.69</div></div>
+        <div><div class="cc-ml">CTR</div><div class="cc-mv">2,90%</div></div>
+        <div><div class="cc-ml">% Neg CRM</div><div class="cc-mv" style="color:var(--green)">12,2%</div></div>
+      </div>
+    </div><div class="cc cc-green">
+      <div class="cc-star bg">MELHOR CPL</div>
+      <div class="cc-name">Centro-Oeste Agro</div>
+      <div class="cc-cpl" style="color:var(--gold)">R$33,26</div>
+      <div class="cc-leads">97 leads · R$3.226 · R$300/dia</div>
+      <div class="cc-m">
+        <div><div class="cc-ml">CPM</div><div class="cc-mv">R$164.44</div></div>
+        <div><div class="cc-ml">CTR</div><div class="cc-mv">2,20%</div></div>
+        <div><div class="cc-ml">% Neg CRM</div><div class="cc-mv" style="color:var(--green)">19,4%</div></div>
+      </div>
+    </div><div class="cc cc-yellow">
+      <div class="cc-star by">MELHOR % NEG</div>
       <div class="cc-name">Nordeste Segmentado</div>
-      <div class="cc-cpl" style="color:var(--yellow)">R$43,52</div>
-      <div class="cc-leads">66 leads · R$2.871 gastos · R$350/dia</div>
-      <div class="cc-m"><div><div class="cc-ml">CPM</div><div class="cc-mv">R$136</div></div><div><div class="cc-ml">CTR</div><div class="cc-mv">1,8%</div></div><div><div class="cc-ml">Freq.</div><div class="cc-mv">1,62</div></div></div>
-    </div>
-    <div class="cc" style="border-top-color:var(--muted)">
+      <div class="cc-cpl" style="color:var(--gold)">R$44,58</div>
+      <div class="cc-leads">88 leads · R$3.923 · R$350/dia</div>
+      <div class="cc-m">
+        <div><div class="cc-ml">CPM</div><div class="cc-mv">R$146.29</div></div>
+        <div><div class="cc-ml">CTR</div><div class="cc-mv">1,92%</div></div>
+        <div><div class="cc-ml">% Neg CRM</div><div class="cc-mv" style="color:var(--green)">19,3%</div></div>
+      </div>
+    </div><div class="cc" style="border-top-color:var(--muted)">
       <div class="cc-star" style="background:var(--muted);color:var(--bg)">PAUSADA</div>
       <div class="cc-name">Campanha Anterior<br>(30/05–06/06)</div>
       <div class="cc-cpl" style="color:var(--muted2)">R$69,91</div>
-      <div class="cc-leads">51 leads · R$3.566 gastos · 7 dias</div>
-      <div class="cc-m"><div><div class="cc-ml">CPM</div><div class="cc-mv">R$104.87</div></div><div><div class="cc-ml">CTR</div><div class="cc-mv">1,14%</div></div><div><div class="cc-ml">Freq.</div><div class="cc-mv">1,63</div></div></div>
-    </div>
-  </div>
-
+      <div class="cc-leads">51 leads · R$3.566 · 7 dias</div>
+      <div class="cc-m">
+        <div><div class="cc-ml">CPM</div><div class="cc-mv">R$104.87</div></div>
+        <div><div class="cc-ml">CTR</div><div class="cc-mv">1,14%</div></div>
+        <div><div class="cc-ml">Freq.</div><div class="cc-mv">1,63</div></div>
+      </div>
+    </div></div>
   <div class="g2">
     <div class="card"><div class="ct">Leads e CPL por conjunto (campanha ativa)</div><div class="cw"><canvas id="c-meta-conj"></canvas></div></div>
-    <div class="card"><div class="ct" id="meta-cpl-title">Evolução CPL consolidado — 17 dias (2 campanhas)</div><div class="cw"><canvas id="c-meta-cpl"></canvas></div></div>
+    <div class="card"><div class="ct" id="meta-cpl-title">Evolução CPL consolidado — 19 dias (2 campanhas)</div><div class="cw"><canvas id="c-meta-cpl"></canvas></div></div>
   </div>
 </div>
 
@@ -561,232 +392,38 @@ canvas{max-height:220px}
 <div class="page" id="page-qualificacao">
   <div class="hero">
     <div>
-      <div class="hero-ey">CRM + Meta Ads · análise de qualificação por dimensão</div>
-      <div class="hero-h1">Qualificação dos <em>Leads</em></div>
-      <div class="hero-sub">46 negócios de 272 leads · Conjuntos, consultores, estados, horários e campanhas</div>
+      <div class="hero-ey">CRM Clint · Cruzamento preciso 92,2% via planilha · D19</div>
+      <div class="hero-h1">Qualificação — <em>Onde os Negócios Acontecem</em></div>
+      <div class="hero-sub">55 negócios · 15,8% qualificação geral · metodologia precisa via planilha</div>
     </div>
     <div class="hero-stats">
-      <div class="hs"><div class="hs-val" style="color:var(--green)">46</div><div class="hs-lbl">Negócios</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--green)">16,9%</div><div class="hs-lbl">Taxa qualif.</div></div>
+      <div class="hs"><div class="hs-val" style="color:var(--green)">55</div><div class="hs-lbl">negócios</div></div>
     </div>
   </div>
-
-  <div class="kpis kpis-4">
-    <div class="kpi">
-      <div class="kl">Melhor campanha</div>
-      <div class="kv green">07-06 · 19,7%</div>
-      <div class="kr">44 negócios de 223 leads</div>
-    </div>
-    <div class="kpi">
-      <div class="kl">Melhor público</div>
-      <div class="kv green">Nordeste · 26,6%</div>
-      <div class="kr">17 negócios de 64 leads (preciso)</div>
-    </div>
-    <div class="kpi">
-      <div class="kl">Melhor estado</div>
-      <div class="kv green">MG · 35,7%</div>
-      <div class="kr">MS e MT também acima de 25%</div>
-    </div>
-    <div class="kpi">
-      <div class="kl">Melhor horário</div>
-      <div class="kv green">23h · 6 neg.</div>
-      <div class="kr">Maior volume absoluto de negócios</div>
-    </div>
+  <div class="g2" style="margin-bottom:16px">
+    <div class="card"><div class="ct">% Negócio por conjunto (CRM preciso)</div><div class="cw"><canvas id="c-qualif-conj"></canvas></div></div>
+    <div class="card"><div class="ct">Negócios por consultor</div><div class="cw"><canvas id="c-qualif-cons"></canvas></div></div>
   </div>
-
-  <div class="g3" style="margin-bottom:14px">
-
-    <!-- ESTADOS -->
-    <div class="card">
-      <div class="ct">Estados — % negócio (mín. 3 leads)</div>
-      <div class="qual-bar-row">
-        <div class="qual-lbl">MG</div>
-        <div class="qual-track"><div class="qual-fill" style="width:100.0%;background:rgba(34,197,94,.25)"><span style="color:var(--green)">14 leads</span></div></div>
-        <div class="qual-num" style="color:var(--green)">35,7%</div>
-      </div>
-      <div class="qual-bar-row">
-        <div class="qual-lbl">MS</div>
-        <div class="qual-track"><div class="qual-fill" style="width:80.0%;background:rgba(34,197,94,.25)"><span style="color:var(--green)">7 leads</span></div></div>
-        <div class="qual-num" style="color:var(--green)">28,6%</div>
-      </div>
-      <div class="qual-bar-row">
-        <div class="qual-lbl">MT</div>
-        <div class="qual-track"><div class="qual-fill" style="width:75.0%;background:rgba(34,197,94,.25)"><span style="color:var(--green)">15 leads</span></div></div>
-        <div class="qual-num" style="color:var(--green)">26,7%</div>
-      </div>
-      <div class="qual-bar-row">
-        <div class="qual-lbl">RJ</div>
-        <div class="qual-track"><div class="qual-fill" style="width:62.0%;background:rgba(34,197,94,.25)"><span style="color:var(--green)">9 leads</span></div></div>
-        <div class="qual-num" style="color:var(--green)">22,2%</div>
-      </div>
-      <div class="qual-bar-row">
-        <div class="qual-lbl">PA</div>
-        <div class="qual-track"><div class="qual-fill" style="width:56.0%;background:rgba(34,197,94,.25)"><span style="color:var(--green)">5 leads</span></div></div>
-        <div class="qual-num" style="color:var(--green)">20,0%</div>
-      </div>
-      <div class="qual-bar-row">
-        <div class="qual-lbl">SP</div>
-        <div class="qual-track"><div class="qual-fill" style="width:47.0%;background:rgba(245,158,11,.2)"><span style="color:var(--yellow)">107 leads</span></div></div>
-        <div class="qual-num" style="color:var(--yellow)">16,8%</div>
-      </div>
-      <div style="margin-top:10px;padding:8px 10px;background:rgba(34,197,94,.06);border-left:2px solid var(--green);font-size:10px;color:var(--muted2)">
-        MG, MS e MT convertem ~2x mais que SP. Confirma estratégia de conjuntos regionais fora de SP capital.
-      </div>
-    </div>
-
-    <!-- CONSULTORES + INTERESSE -->
-    <div class="card">
-      <div class="ct">Consultores — % negócio</div>
-      <div class="consul-row">
-        <div class="av av-g">MA</div>
-        <div style="flex:1"><div class="consul-name">Marcelo A.</div><div class="consul-meta">85 leads · 23 negócios</div></div>
-        <div style="text-align:right"><div style="font-size:18px;font-weight:700;color:var(--green)">27,1%</div><div class="bdg bg">melhor</div></div>
-      </div>
-      <div class="consul-row">
-        <div class="av av-a">FA</div>
-        <div style="flex:1"><div class="consul-name">Fabiana O.</div><div class="consul-meta">150 leads · 23 negócios</div></div>
-        <div style="text-align:right"><div style="font-size:18px;font-weight:700;color:var(--gold)">15,3%</div><div class="bdg bb">ok</div></div>
-      </div>
-      <div class="consul-row">
-        <div class="av av-r">VR</div>
-        <div style="flex:1"><div class="consul-name">Viviane R.</div><div class="consul-meta">37 leads · 0 negócios</div></div>
-        <div style="text-align:right"><div style="font-size:18px;font-weight:700;color:var(--red)">0,0%</div><div class="bdg br">crítico</div></div>
-      </div>
-      <div style="margin-top:12px">
-        <div class="ct">Negócios por interesse declarado</div>
-        <div class="interest-row">
-          <div class="interest-lbl">Investir</div>
-          <div class="interest-track"><div class="interest-fill" style="width:100.0%;background:rgba(34,197,94,.25)"><span style="color:var(--green)">194 leads · 39 neg.</span></div></div>
-          <div class="interest-pct" style="color:var(--green)">20,1%</div>
-        </div>
-        <div class="interest-row">
-          <div class="interest-lbl">Morar</div>
-          <div class="interest-track"><div class="interest-fill" style="width:24.0%;background:rgba(245,158,11,.2)"><span style="color:var(--yellow)">46 leads · 6 neg.</span></div></div>
-          <div class="interest-pct" style="color:var(--yellow)">13,0%</div>
-        </div>
-        <div class="interest-row">
-          <div class="interest-lbl">Inv. renda</div>
-          <div class="interest-track"><div class="interest-fill" style="width:13.0%;background:rgba(239,68,68,.15)"><span style="color:var(--red)">25 leads · 1 neg.</span></div></div>
-          <div class="interest-pct" style="color:var(--red)">4,0%</div>
-        </div>
-        <div class="interest-row">
-          <div class="interest-lbl">Avaliando</div>
-          <div class="interest-track"><div class="interest-fill" style="width:4.0%;background:rgba(239,68,68,.1)"><span style="color:var(--red)">7 leads · 0 neg.</span></div></div>
-          <div class="interest-pct" style="color:var(--red)">0,0%</div>
-        </div>
-        <div style="padding:7px 10px;background:rgba(245,158,11,.06);border-left:2px solid var(--yellow);font-size:10px;color:var(--muted2)">
-          "Investir" converte 5x mais que "Inv. renda". Simplificar opções do formulário continua válido.
-        </div>
-      </div>
-    </div>
-
-    <!-- NEGÓCIOS POR HORA -->
-    <div class="card">
-      <div class="ct">Negócios por hora — volume absoluto</div>
-      <div class="cw"><canvas id="c-qual-hora"></canvas></div>
-      <div style="margin-top:8px;padding:8px 10px;background:rgba(201,169,110,.06);border-left:2px solid var(--gold);font-size:10px;color:var(--muted2)">
-        Barras = negócios absolutos · Linha = % qualificação (mín. 5 leads). Horas com baixo volume têm % distorcido.
-      </div>
-    </div>
-  </div>
-
-  <div class="g2">
-
-    <!-- CAMPANHAS -->
-    <div class="card" style="padding:0;overflow:hidden">
-      <div style="padding:14px 14px 0"><div class="ct">Campanhas — leads qualificados comparados</div></div>
-      <div class="camp-row" style="padding:12px 14px">
-        <div style="flex:1">
-          <div class="camp-name">SP · 07-06-2026 <span class="bdg bg" style="margin-left:6px">ativa</span></div>
-          <div class="camp-meta">ABO · 3 conjuntos · R$1050/dia</div>
-        </div>
-        <div class="camp-stats">
-          <div class="camp-stat"><div class="camp-stat-v" style="color:var(--green)">44</div><div class="camp-stat-l">negócios</div></div>
-          <div class="camp-stat"><div class="camp-stat-v" style="color:var(--green)">19,7%</div><div class="camp-stat-l">qualif.</div></div>
-          <div class="camp-stat"><div class="camp-stat-v">223</div><div class="camp-stat-l">leads</div></div>
-        </div>
-      </div>
-      <div class="camp-row" style="padding:12px 14px">
-        <div style="flex:1">
-          <div class="camp-name">SP · 30-06-2026 <span class="bdg" style="background:rgba(255,255,255,.05);color:var(--muted);margin-left:6px">pausada</span></div>
-          <div class="camp-meta">Estrutura anterior</div>
-        </div>
-        <div class="camp-stats">
-          <div class="camp-stat"><div class="camp-stat-v" style="color:var(--red)">2</div><div class="camp-stat-l">negócios</div></div>
-          <div class="camp-stat"><div class="camp-stat-v" style="color:var(--red)">4,1%</div><div class="camp-stat-l">qualif.</div></div>
-          <div class="camp-stat"><div class="camp-stat-v">49</div><div class="camp-stat-l">leads</div></div>
-        </div>
-      </div>
-      <div style="padding:0 14px 14px;margin-top:4px">
-        <div class="cw"><canvas id="c-camp-compare"></canvas></div>
-      </div>
-    </div>
-
-    <!-- CONJUNTOS -->
-    <div class="card">
-      <div class="ct">Conjuntos de anúncio — % negócio pelo CRM</div>
-      <div style="font-size:10px;color:var(--green);margin-bottom:12px">✅ Cruzamento preciso via planilha de campanha (adset_id) · 223 de 223 leads mapeados · ver aba Retroalimentação</div>
-      <div class="qual-bar-row">
-        <div class="qual-lbl">Nordeste</div>
-        <div class="qual-track"><div class="qual-fill" style="width:100.0%;background:rgba(34,197,94,.3)"><span style="color:var(--green)">64 leads · 17 neg.</span></div></div>
-        <div class="qual-num" style="color:var(--green)">26,6%</div>
-      </div>
-      <div class="qual-bar-row">
-        <div class="qual-lbl">Agro CO</div>
-        <div class="qual-track"><div class="qual-fill" style="width:79.0%;background:rgba(34,197,94,.22)"><span style="color:var(--green)">71 leads · 15 neg.</span></div></div>
-        <div class="qual-num" style="color:var(--green)">21,1%</div>
-      </div>
-      <div class="qual-bar-row">
-        <div class="qual-lbl">Brasil ex-SP</div>
-        <div class="qual-track"><div class="qual-fill" style="width:51.0%;background:rgba(245,158,11,.2)"><span style="color:var(--yellow)">88 leads · 12 neg.</span></div></div>
-        <div class="qual-num" style="color:var(--yellow)">13,6%</div>
-      </div>
-      <div style="margin-top:12px;padding:8px 10px;background:rgba(239,68,68,.06);border-left:2px solid var(--red);font-size:10px;color:var(--muted2)">
-        🚨 Brasil ex-SP Capital recebe 38% do orçamento e tem o PIOR % negócio (13,6%) e o PIOR custo/negócio (R$261,41). Ver recomendação na aba Retroalimentação.
-      </div>
-      <div style="margin-top:10px">
-        <div class="ct" style="margin-bottom:10px">Comparativo conjuntos — leads vs negócios</div>
-        <div class="cw"><canvas id="c-conj-qual"></canvas></div>
-      </div>
-    </div>
-  </div>
+  <div style="margin-bottom:8px;font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px">Por conjunto</div>
+  <div class="kpis" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px"><div class="kpi"><div class="kl">Brasil ex-SP Capital</div><div class="kv gold">12,2%</div><div class="kr">147 leads · 18 neg</div><div class="bdg br">R$280/neg</div></div><div class="kpi"><div class="kl">Campanha Anterior</div><div class="kv gold">8,3%</div><div class="kr">12 leads · 1 neg</div><div class="bdg br">R$0/neg</div></div><div class="kpi"><div class="kl">Centro-Oeste Agro</div><div class="kv gold">19,4%</div><div class="kr">98 leads · 19 neg</div><div class="bdg bg">R$171/neg</div></div><div class="kpi"><div class="kl">Nordeste Segmentado</div><div class="kv gold">19,3%</div><div class="kr">88 leads · 17 neg</div><div class="bdg bg">R$231/neg</div></div></div>
+  <div style="margin-bottom:8px;font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px">Por consultor</div>
+  <div class="kpis" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px"><div class="kpi"><div class="kl">FABIANADE OLIVEIRA CARVALHO</div><div class="kv yellow">15,1%</div><div class="kr">186 leads · 28 neg</div><div class="bdg by">28 negócios</div></div><div class="kpi"><div class="kl">Marcelo de Albuquerque Pereira</div><div class="kv green">21,6%</div><div class="kr">125 leads · 27 neg</div><div class="bdg bg">27 negócios</div></div><div class="kpi"><div class="kl">VivianeRodrigues</div><div class="kv red">0,0%</div><div class="kr">37 leads · 0 neg</div><div class="bdg br">0 negócios</div></div></div>
+  <div style="margin-bottom:8px;font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px">Top estados (min 5 leads)</div>
+  <div class="kpis" style="grid-template-columns:repeat(3,1fr)"><div class="kpi"><div class="kl">MT</div><div class="kv gold">35,3%</div><div class="kr">17 leads · 6 neg</div><div class="bdg bg">Top</div></div><div class="kpi"><div class="kl">RJ</div><div class="kv gold">25,0%</div><div class="kr">12 leads · 3 neg</div><div class="bdg bg">Top</div></div><div class="kpi"><div class="kl">MS</div><div class="kv gold">25,0%</div><div class="kr">8 leads · 2 neg</div><div class="bdg bg">Top</div></div><div class="kpi"><div class="kl">MG</div><div class="kv gold">22,7%</div><div class="kr">22 leads · 5 neg</div><div class="bdg bg">Top</div></div><div class="kpi"><div class="kl">SC</div><div class="kv gold">20,0%</div><div class="kr">5 leads · 1 neg</div><div class="bdg bg">Top</div></div><div class="kpi"><div class="kl">ES</div><div class="kv gold">18,2%</div><div class="kr">11 leads · 2 neg</div><div class="bdg bb">Médio</div></div></div>
 </div>
 
 <!-- EVOLUÇÃO -->
 <div class="page" id="page-evolucao">
   <div class="hero">
     <div>
-      <div class="hero-ey">CRM consolidado · 14 dias · 30/05 → 15/06/2026</div>
-      <div class="hero-h1">Evolução <em>Diária</em></div>
-      <div class="hero-sub">Leads por dia + Negócios + CPL por conjunto</div>
-    </div>
-    <div class="hero-stats">
-      <div class="hs"><div class="hs-val" style="color:var(--green)">34</div><div class="hs-lbl">Maior dia (07/06)</div></div>
-      <div class="hs"><div class="hs-val" style="color:var(--gold)">8</div><div class="hs-lbl">Recorde diário negócios</div></div>
-    </div>
-  </div>
-  <div class="card" style="margin-bottom:16px">
-    <div class="ct">Leads por dia — CRM completo</div>
-    <div style="padding:6px 0">
-      <div class="tl-row"><div class="tl-lbl">30/05 Sáb</div><div class="tl-track"><div class="tl-fill" style="width:8.8%;background:rgba(85,95,112,.5);color:var(--white)">3</div></div><div class="tl-val" style="color:var(--muted)">3</div><div class="tl-meta" style="color:var(--muted)">D-7 · 1 negócio</div></div>
-      <div class="tl-row"><div class="tl-lbl">31/05 Dom</div><div class="tl-track"><div class="tl-fill" style="width:50.0%;background:rgba(85,95,112,.5);color:var(--white)">17</div></div><div class="tl-val" style="color:var(--muted)">17</div><div class="tl-meta" style="color:var(--muted)">0 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">01/06 Seg</div><div class="tl-track"><div class="tl-fill" style="width:44.1%;background:rgba(85,95,112,.5);color:var(--white)">15</div></div><div class="tl-val" style="color:var(--muted)">15</div><div class="tl-meta" style="color:var(--muted)">0 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">02/06 Ter</div><div class="tl-track"><div class="tl-fill" style="width:11.8%;background:rgba(85,95,112,.5);color:var(--white)">4</div></div><div class="tl-val" style="color:var(--muted)">4</div><div class="tl-meta" style="color:var(--muted)">0 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">06/06 Sáb</div><div class="tl-track"><div class="tl-fill" style="width:20.6%;background:rgba(96,165,250,.5);color:var(--white)">7</div></div><div class="tl-val" style="color:var(--blue)">7</div><div class="tl-meta" style="color:var(--blue)">D0 nova camp.</div></div>
-      <div class="tl-row"><div class="tl-lbl">07/06 Dom</div><div class="tl-track"><div class="tl-fill" style="width:100.0%;background:rgba(34,197,94,.7);color:var(--white)">34 leads — maior dia</div></div><div class="tl-val" style="color:var(--green)">34</div><div class="tl-meta" style="color:var(--green)">maior dia · 4 neg.</div></div>
-      <div class="tl-row"><div class="tl-lbl">08/06 Seg</div><div class="tl-track"><div class="tl-fill" style="width:82.4%;background:rgba(34,197,94,.6);color:var(--white)">28</div></div><div class="tl-val" style="color:var(--green)">28</div><div class="tl-meta" style="color:var(--green)">8 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">09/06 Ter</div><div class="tl-track"><div class="tl-fill" style="width:88.2%;background:rgba(34,197,94,.6);color:var(--white)">30</div></div><div class="tl-val" style="color:var(--green)">30</div><div class="tl-meta" style="color:var(--green)">7 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">10/06 Qua</div><div class="tl-track"><div class="tl-fill" style="width:82.4%;background:rgba(201,169,110,.6);color:var(--white)">28</div></div><div class="tl-val" style="color:var(--gold)">28</div><div class="tl-meta" style="color:var(--gold)">8 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">11/06 Qui</div><div class="tl-track"><div class="tl-fill" style="width:79.4%;background:rgba(201,169,110,.6);color:var(--white)">27</div></div><div class="tl-val" style="color:var(--gold)">27</div><div class="tl-meta" style="color:var(--gold)">5 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">12/06 Sex</div><div class="tl-track"><div class="tl-fill" style="width:79.4%;background:rgba(245,158,11,.6);color:var(--white)">27</div></div><div class="tl-val" style="color:var(--yellow)">27</div><div class="tl-meta" style="color:var(--yellow)">4 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">13/06 Sáb</div><div class="tl-track"><div class="tl-fill" style="width:61.8%;background:rgba(245,158,11,.6);color:var(--white)">21</div></div><div class="tl-val" style="color:var(--yellow)">21</div><div class="tl-meta" style="color:var(--yellow)">3 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">14/06 Dom</div><div class="tl-track"><div class="tl-fill" style="width:76.5%;background:rgba(245,158,11,.6);color:var(--white)">26</div></div><div class="tl-val" style="color:var(--yellow)">26</div><div class="tl-meta" style="color:var(--yellow)">5 negócios</div></div>
-      <div class="tl-row"><div class="tl-lbl">15/06 Seg</div><div class="tl-track"><div class="tl-fill" style="width:14.7%;background:rgba(85,95,112,.5);color:var(--white)">5</div></div><div class="tl-val" style="color:var(--muted)">5</div><div class="tl-meta" style="color:var(--muted)">0 neg. parcial</div></div>
+      <div class="hero-ey">CRM + Meta Ads · D19 · 30/05→18/06/2026</div>
+      <div class="hero-h1">Evolução — <em>Timeline Diária</em></div>
+      <div class="hero-sub">348 leads CRM · 362 leads Meta · 55 negócios</div>
     </div>
   </div>
   <div class="g2">
-    <div class="card"><div class="ct">Leads e negócios por dia</div><div class="cw"><canvas id="c-diario"></canvas></div></div>
-    <div class="card"><div class="ct">CPL diário por conjunto (9 dias)</div><div class="cw"><canvas id="c-cpl-evolucao"></canvas></div></div>
+    <div class="card"><div class="ct">Leads e Negócios por dia (CRM)</div><div class="cw" style="height:280px"><canvas id="c-evolucao-crm"></canvas></div></div>
+    <div class="card"><div class="ct">CPL consolidado por dia (Meta, 2 campanhas)</div><div class="cw" style="height:280px"><canvas id="c-evolucao-cpl"></canvas></div></div>
   </div>
 </div>
 
@@ -794,57 +431,54 @@ canvas{max-height:220px}
 <div class="page" id="page-acoes">
   <div class="hero">
     <div>
-      <div class="hero-ey">Plano de ação · Dados reais CRM + Meta · D9</div>
-      <div class="hero-h1">O que Fazer <em>Agora</em></div>
-      <div class="hero-sub">Baseado em 272 leads CRM + R$8.327 Meta + cruzamento preciso de conjuntos</div>
+      <div class="hero-ey">Plano de ação · D19 · Baseado em dados 30/05→18/06/2026</div>
+      <div class="hero-h1">Ações — <em>Plano Tático D19→D26</em></div>
+      <div class="hero-sub">3 ações executadas · 2 monitoramentos ativos · próximos checkpoints D21/D26</div>
     </div>
   </div>
-  <div class="g2">
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div class="al bad"><div class="al-ico">🚨</div><div><strong>Viviane — 0% em 37 leads, 4 dias SEM mudança</strong><p>Mesmo total de 37 leads e 0 negócios desde o relatório de 12/06. Nenhum lead novo foi atribuído ou nenhuma conversão ocorreu. Reunião 1:1 hoje — script, abordagem ou triagem de leads.</p></div></div>
-      <div class="al ok"><div class="al-ico">✅</div><div><strong>Preparar realocação Brasil ex-SP → Nordeste (próximo ciclo)</strong><p>Brasil ex-SP Capital: 38% do orçamento, pior % negócio (13,6%) e pior custo/negócio (R$261,41). Nordeste: melhor % negócio (26,6%) com CPL mais alto, mas custo/negócio competitivo (R$168,95). Desenhar realocação de R$50/dia para D+2/D+3.</p></div></div>
-      <div class="al ok"><div class="al-ico">✅</div><div><strong>SDR cobertura 19h–23h e domingos ainda crítico</strong><p>39,3% dos leads chegam 19h–23h. Domingo = 28,3% de todos os leads. Sem cobertura, segue perdendo ~60% do potencial.</p></div></div>
-      <div class="al ok"><div class="al-ico">✅</div><div><strong>Simplificar opções do formulário</strong><p>"Investimento para renda (locação)" continua convertendo 5x menos (4,0%) que "Investir" (20,1%). Remover ou reposicionar esta opção.</p></div></div>
+  <div class="g2" style="margin-bottom:16px">
+    <div class="card">
+      <div class="ct" style="color:var(--green)">✅ Fazer</div>
+      <div style="padding:4px 0;font-size:13px;line-height:2">
+        <div style="padding:8px;border-bottom:1px solid var(--border2)">⏳ <strong>Monitorar realocação Brasil→Nordeste (17-18/06)</strong> — aguardar 72h fechados para isolar efeito; só ajustar se Nordeste subir CPL acima de R$55 por 2 dias consecutivos</div>
+        <div style="padding:8px;border-bottom:1px solid var(--border2)">⏳ <strong>Monitorar CPL Centro-Oeste Agro</strong> — meta normalização para R$28–38. D16: R$38,47 (✅ dentro da faixa). Se D19 fechar acima de R$50 → reduzir budget de volta R$300→R$270</div>
+        <div style="padding:8px;border-bottom:1px solid var(--border2)">🎯 <strong>Injetar criativo novo no Nordeste Segmentado</strong> — freq 1,73 e volume crescente; ângulo novo de criativo para sustentar CPL com budget maior (R$400/dia)</div>
+        <div style="padding:8px;border-bottom:1px solid var(--border2)">📊 <strong>Validar resultado da redistribuição de leads da Viviane</strong> — conferir % qualificação de Fabiana e Marcelo nos próximos 5 dias; meta: qualificação geral subir de 15,8% para 18%+</div>
+        <div style="padding:8px">🔄 <strong>Próximo relatório D21 (20/06)</strong> — foco: primeiro dado limpo da realocação Brasil→Nordeste e efeito da redistribuição de consultores</div>
+      </div>
     </div>
-    <div style="display:flex;flex-direction:column;gap:10px">
-      <div class="al bad"><div class="al-ico">🚫</div><div><strong>NÃO fazer 3ª mudança nos próximos 2-3 dias</strong><p>Scale do Agro (+20%) e edição de 39 criativos (preço) ainda sem efeito isolado. Uma nova variável agora impede atribuição de causa no D11. Aguardar 17-18/06.</p></div></div>
-      <div class="al bad"><div class="al-ico">🚫</div><div><strong>NÃO alterar o 05-01 Dinâmico</strong><p>75,4% do volume e 91% dos negócios (42 de 46). Qualquer mudança é risco desnecessário. Variações como criativos novos, não substituição.</p></div></div>
-      <div class="al warn"><div class="al-ico">⚠️</div><div><strong>Alinhar com comercial: preço 347k → 463k</strong><p>Leads captados ANTES de 14/06 (maioria dos 46 negócios) viram "a partir de 347 mil". Time comercial precisa estar ciente da atualização para alinhar expectativa no follow-up — risco de quebra de confiança em +33% no preço-âncora.</p></div></div>
-      <div class="al info"><div class="al-ico">📊</div><div><strong>Projeção: 2-4 vendas na próxima semana</strong><p>46 negócios + ritmo de 4-8/dia (D7-D9). Taxa fechamento 5-10%: VGV R$601k–R$1,7M (base R$463k/unid.).</p></div></div>
+    <div class="card">
+      <div class="ct" style="color:var(--red)">🚫 Não fazer</div>
+      <div style="padding:4px 0;font-size:13px;line-height:2">
+        <div style="padding:8px;border-bottom:1px solid var(--border2)">❌ <strong>Não fazer nova alteração de orçamento antes do D21</strong> — 2 ações simultâneas em monitoramento; 3ª mudança torna impossível atribuição de causa</div>
+        <div style="padding:8px;border-bottom:1px solid var(--border2)">❌ <strong>Não editar criativos dos 39 anúncios que tiveram preço alterado</strong> — aguardar sair da fase de aprendizado (mín 50 conversões por conjunto)</div>
+        <div style="padding:8px;border-bottom:1px solid var(--border2)">❌ <strong>Não ativar novos públicos/conjuntos</strong> — 3 conjuntos com dados suficientes para otimização; novo conjunto no momento dilui o aprendizado</div>
+        <div style="padding:8px">❌ <strong>Não comparar CPL de D19 parcial com D18 fechado</strong> — dia em andamento tem CPL inflado estruturalmente até algoritmo distribuir gasto completo</div>
+      </div>
     </div>
   </div>
-  <div class="g3" style="margin-top:16px">
-    <div class="card" style="border-top:2px solid var(--gold)">
-      <div class="ct">D10-D11 · 16-17/06</div>
-      <div style="display:flex;flex-direction:column;gap:6px;font-size:11px;color:rgba(237,234,227,.8)">
-        <div style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>Reunião com Viviane — diagnóstico 0%</div>
-        <div style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>Monitorar CPL Agro (esperar normalizar p/ R$25-35)</div>
-        <div style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>Confirmar CTR/CPL com novo preço (D2-D3 pós-edição)</div>
-        <div style="display:flex;gap:8px"><span style="color:var(--gold)">→</span>Alinhar comercial sobre 347k→463k</div>
+  <div class="card">
+    <div class="ct">Checkpoints</div>
+    <div class="g3" style="padding:12px">
+      <div style="text-align:center;padding:12px;background:var(--bg3);border-radius:8px">
+        <div style="color:var(--gold);font-size:18px;font-weight:700">D21 — 20/06</div>
+        <div style="color:var(--muted2);font-size:11px;margin-top:4px">Primeiro dado limpo da realocação Brasil→Nordeste · CPL Agro normalizado? · Qualificação pós-Viviane</div>
       </div>
-    </div>
-    <div class="card" style="border-top:2px solid var(--blue)">
-      <div class="ct">D+2/D+3 · 17-18/06</div>
-      <div style="display:flex;flex-direction:column;gap:6px;font-size:11px;color:rgba(237,234,227,.8)">
-        <div style="display:flex;gap:8px"><span style="color:var(--blue)">→</span>Realocar Brasil ex-SP (R$400→R$350) → Nordeste (R$350→R$400)</div>
-        <div style="display:flex;gap:8px"><span style="color:var(--blue)">→</span>Pausar anúncios sem lead após 9 dias</div>
-        <div style="display:flex;gap:8px"><span style="color:var(--blue)">→</span>Criar 2-3 variações do 05-01 Dinâmico (não substituir)</div>
-        <div style="display:flex;gap:8px"><span style="color:var(--blue)">→</span>Lookalike de negócios (base de 46 já permite)</div>
+      <div style="text-align:center;padding:12px;background:var(--bg3);border-radius:8px">
+        <div style="color:var(--gold);font-size:18px;font-weight:700">D26 — 25/06</div>
+        <div style="color:var(--muted2);font-size:11px;margin-top:4px">Avaliação completa de todos os ajustes · Decisão sobre novo criativo Nordeste · Budget próximo ciclo</div>
       </div>
-    </div>
-    <div class="card" style="border-top:2px solid var(--green)">
-      <div class="ct">D+7 · 22/06</div>
-      <div style="display:flex;flex-direction:column;gap:6px;font-size:11px;color:rgba(237,234,227,.8)">
-        <div style="display:flex;gap:8px"><span style="color:var(--green)">→</span>Meta: 350+ leads qualificados</div>
-        <div style="display:flex;gap:8px"><span style="color:var(--green)">→</span>Confirmar Nordeste como público prioritário</div>
-        <div style="display:flex;gap:8px"><span style="color:var(--green)">→</span>Avaliar terceiro conjunto regional (RJ/MG)</div>
-        <div style="display:flex;gap:8px"><span style="color:var(--green)">→</span>Meta vendas: 5-8 unidades acumuladas</div>
+      <div style="text-align:center;padding:12px;background:var(--bg3);border-radius:8px">
+        <div style="color:var(--gold);font-size:18px;font-weight:700">D30 — 29/06</div>
+        <div style="color:var(--muted2);font-size:11px;margin-top:4px">Revisão estratégica do ciclo completo · Encerramento da campanha ativa · Planejamento próxima campanha</div>
       </div>
     </div>
   </div>
 </div>
 
+
 <script>
+
 function show(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
@@ -856,139 +490,119 @@ const G='#22c55e',Y='#f59e0b',R='#ef4444',GOLD='#c9a96e',B='#60a5fa',M='#555f70'
 const grid='rgba(255,255,255,0.04)',tick='#555f70';
 const opt=()=>({responsive:true,plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}}}});
 
-// ===== RETROALIMENTAÇÃO =====
-new Chart(document.getElementById('c-retro-cpl'),{type:'line',data:{labels:["D1 07/06", "D2 08/06", "D3 09/06", "D4 10/06", "D5 11/06", "D6 12/06", "D7 13/06", "D8 14/06", "D9 15/06*"],datasets:[
-  {label:'Brasil ex-SP',data:[24.25, 47.17, 29.24, 45.66, 30.6, 40.29, 41.34, 39.39, 25.73],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,pointRadius:4,pointBackgroundColor:GOLD},
-  {label:'Centro-Oeste Agro',data:[26.42, 26.08, 32.16, 16.2, 26.87, 37.17, 35.01, 80.16, 69.5],borderColor:G,backgroundColor:'rgba(34,197,94,.08)',tension:.4,pointRadius:4,pointBackgroundColor:G},
-  {label:'Nordeste',data:[142.69, 50.71, 19.66, 52.71, 38.54, 29.1, 49.04, 46.09, 112.41],borderColor:Y,backgroundColor:'rgba(245,158,11,.08)',tension:.4,pointRadius:4,pointBackgroundColor:Y},
-  {label:'Meta R$80',data:[80,80,80,80,80,80,80,80,80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0}
+// Retro CPL 7 dias
+new Chart(document.getElementById('c-retro-cpl'),{type:'line',data:{labels:['06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
+  {label:'CPL (R$)',data:[31.68, 40.76, 46.04, 41.22, 34.79, 47.47, 36.07],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.1)',tension:.4,pointRadius:4,spanGaps:true},
+  {label:'Meta R$80',data:[80, 80, 80, 80, 80, 80, 80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0}
 ]},options:{...opt()}});
 
-new Chart(document.getElementById('c-retro-comp'),{type:'bar',data:{labels:['Nordeste Segm.','Centro-Oeste Agro','Brasil ex-SP'],datasets:[
-  {label:'Estimado (heurística, 12/06)',data:[5.9,33.3,21.8],backgroundColor:'rgba(85,95,112,.5)'},
-  {label:'Real (preciso, hoje)',data:[26.6,21.1,13.6],backgroundColor:['rgba(34,197,94,.8)','rgba(245,158,11,.7)','rgba(239,68,68,.7)']}
-]},options:{responsive:true,plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9},callback:v=>v+'%'},grid:{color:grid}}}}});
+new Chart(document.getElementById('c-retro-leads'),{type:'bar',data:{labels:['06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
+  {label:'Leads/dia',data:[28, 21, 26, 25, 31, 20, 10],backgroundColor:'rgba(96,165,250,.5)'}
+]},options:{...opt()}});
 
-// ===== FUNIL CRM =====
-new Chart(document.getElementById('c-funil-donut'),{type:'doughnut',data:{labels:['Lead (44,9%)','Curioso (38,2%)','Negócio (16,9%)'],datasets:[{data:[122,104,46],backgroundColor:['rgba(96,165,250,.7)','rgba(245,158,11,.7)','rgba(34,197,94,.8)'],borderWidth:2,borderColor:'#07090f'}]},options:{responsive:true,plugins:{legend:{labels:{color:'#8892a0',font:{size:9}},position:'bottom'}}}});
-new Chart(document.getElementById('c-interesse-funil'),{type:'doughnut',data:{labels:['Investir','Morar','Inv. renda','Avaliando'],datasets:[{data:[194,46,25,7],backgroundColor:['rgba(34,197,94,.8)','rgba(96,165,250,.6)','rgba(245,158,11,.6)','rgba(107,114,128,.5)'],borderWidth:2,borderColor:'#07090f'}]},options:{responsive:true,plugins:{legend:{labels:{color:'#8892a0',font:{size:9}},position:'bottom'}}}});
+// Funil
+new Chart(document.getElementById('c-funil'),{type:'bar',data:{labels:['Leads','Curioso+','Negócios'],datasets:[
+  {label:'Volume',data:[348, 187, 55],backgroundColor:[B,Y,G]}
+]},options:{...opt(),indexAxis:'y'}});
 
-// ===== CRIATIVOS =====
-new Chart(document.getElementById('c-cr-volume'),{type:'bar',data:{labels:['05-01 Din.','01-Est.30','01-Din.06','02-Est.06','01-Est.06','Outros(8)'],datasets:[
-  {label:'Lead',data:[83,20,2,2,1,14],backgroundColor:'rgba(96,165,250,.55)',stack:'s'},
-  {label:'Curioso',data:[80,6,3,3,2,10],backgroundColor:'rgba(245,158,11,.55)',stack:'s'},
-  {label:'Negócio',data:[42,1,1,1,1,0],backgroundColor:'rgba(34,197,94,.8)',stack:'s'}
-]},options:{...opt(),scales:{x:{stacked:true,ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{stacked:true,ticks:{color:tick,font:{size:9}},grid:{color:grid}}}}});
-new Chart(document.getElementById('c-cr-qualidade'),{type:'bar',data:{labels:['05-01 Din.','01-Est.06','01-Din.06','02-Est.06','01-Est.30','Outros(8)'],datasets:[{data:[20.5,25.0,16.7,16.7,3.7,0],backgroundColor:['rgba(34,197,94,.7)','rgba(34,197,94,.8)','rgba(245,158,11,.7)','rgba(245,158,11,.6)','rgba(239,68,68,.6)','rgba(239,68,68,.4)'],borderWidth:0}]},options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw}% negócio`}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9},callback:v=>`${v}%`},grid:{color:grid}}}}});
+// Interesse
+new Chart(document.getElementById('c-interesse'),{type:'bar',data:{labels:['investir', 'morar', 'investimento para re', 'moradia própria', 'ainda estou avaliand'],datasets:[
+  {label:'Leads',data:[251, 56, 26, 8, 7],backgroundColor:'rgba(96,165,250,.5)',yAxisID:'y'},
+  {label:'% Negócio',data:[46, 7, 2, 0, 0],type:'line',borderColor:GOLD,yAxisID:'y2',pointRadius:4}
+]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{display:false}}}}});
 
-// ===== HORÁRIOS =====
-const horaData=[12, 5, 5, 3, 3, 7, 11, 6, 5, 8, 9, 9, 13, 13, 11, 8, 12, 11, 14, 16, 26, 24, 19, 22];
-const maxH=Math.max(...horaData);
-const hm=document.getElementById('heatmap');
-horaData.forEach((v,i)=>{
-  const pct=v/maxH;
-  let bg;
-  if(i>=9&&i<=18)bg=`rgba(34,197,94,${0.15+pct*0.65})`;
-  else if(i>=19&&i<=23)bg=`rgba(239,68,68,${0.15+pct*0.65})`;
-  else if(i>=0&&i<=6)bg=`rgba(96,165,250,${0.15+pct*0.65})`;
-  else bg=`rgba(201,169,110,${0.15+pct*0.65})`;
-  const cell=document.createElement('div');
-  cell.className='hm-cell';
-  cell.style.background=bg;
-  cell.style.color=pct>0.4?'rgba(255,255,255,.9)':'transparent';
-  cell.textContent=v;
-  cell.title=`${i}h: ${v} leads`;
-  hm.appendChild(cell);
-});
+// Criativos
+new Chart(document.getElementById('c-criativos-bar'),{type:'bar',data:{labels:['2026', '2026', '2026', '2026', '2026', '2026'],datasets:[
+  {label:'Leads',data:[279, 6, 5, 5, 13, 3],backgroundColor:'rgba(96,165,250,.5)',yAxisID:'y'},
+  {label:'% Negócio',data:[17.9, 16.7, 20.0, 20.0, 7.7, 0.0],type:'line',borderColor:GOLD,yAxisID:'y2',pointRadius:4}
+]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
 
-new Chart(document.getElementById('c-hora'),{type:'bar',data:{labels:['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],datasets:[{label:'Leads',data:horaData,backgroundColor:horaData.map((_,i)=>i>=9&&i<=18?'rgba(34,197,94,.7)':i>=19&&i<=23?'rgba(239,68,68,.7)':i>=0&&i<=6?'rgba(96,165,250,.6)':'rgba(201,169,110,.6)'),borderWidth:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}}}}});
-new Chart(document.getElementById('c-periodo-donut'),{type:'doughnut',data:{labels:['Comercial 9–18h (18,8%)','Noite 19–23h (39,3%)','Madrugada 0–6h (16,9%)','Manhã 7–8h (4,0%)','FDS diurno (21,0%)'],datasets:[{data:[51,107,46,11,57],backgroundColor:['rgba(34,197,94,.8)','rgba(239,68,68,.7)','rgba(96,165,250,.7)','rgba(201,169,110,.6)','rgba(245,158,11,.6)'],borderWidth:2,borderColor:'#07090f'}]},options:{responsive:true,plugins:{legend:{labels:{color:'#8892a0',font:{size:9}},position:'bottom'}}}});
+new Chart(document.getElementById('c-criativos-pie'),{type:'doughnut',data:{labels:['2026', '2026', '2026', '2026', '2026', '2026'],datasets:[
+  {data:[50, 1, 1, 1, 1, 0],backgroundColor:[GOLD,G,B,Y,R,M]}
+]},options:{responsive:true,plugins:{legend:{position:'right',labels:{color:'#8892a0',font:{size:9}}}}}});
 
-// ===== DIAS DA SEMANA =====
-new Chart(document.getElementById('c-diasemana'),{type:'bar',data:{labels:['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],datasets:[{data:[48,34,28,27,27,31,77],backgroundColor:['rgba(34,197,94,.7)','rgba(34,197,94,.6)','rgba(201,169,110,.6)','rgba(201,169,110,.4)','rgba(201,169,110,.4)','rgba(245,158,11,.5)','rgba(239,68,68,.7)'],borderWidth:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}}}}});
-new Chart(document.getElementById('c-fds'),{type:'doughnut',data:{labels:['Dias úteis (60,3%)','Fim de semana (39,7%)'],datasets:[{data:[164,108],backgroundColor:['rgba(34,197,94,.7)','rgba(239,68,68,.6)'],borderWidth:2,borderColor:'#07090f'}]},options:{responsive:true,plugins:{legend:{labels:{color:'#8892a0',font:{size:9}},position:'bottom'}}}});
+// Horários
+new Chart(document.getElementById('c-horas'),{type:'bar',data:{labels:[...Array(24).keys()].map(h=>h+'h'),datasets:[
+  {label:'Leads',data:[14, 8, 7, 5, 6, 9, 13, 8, 9, 10, 16, 10, 13, 14, 12, 12, 18, 11, 18, 21, 32, 28, 25, 29],backgroundColor:'rgba(96,165,250,.6)'}
+]},options:{...opt()}});
+new Chart(document.getElementById('c-neg-horas'),{type:'bar',data:{labels:[...Array(24).keys()].map(h=>h+'h'),datasets:[
+  {label:'Negócios',data:[2, 0, 0, 1, 1, 1, 4, 2, 1, 1, 3, 1, 1, 1, 2, 3, 2, 0, 4, 4, 3, 4, 7, 7],backgroundColor:'rgba(201,169,110,.7)'}
+]},options:{...opt()}});
 
-// ===== META ADS =====
-new Chart(document.getElementById('c-meta-conj'),{type:'bar',data:{labels:['Brasil ex-SP','Centro-Oeste Agro','Nordeste'],datasets:[{label:'Leads',data:[90,74,66],backgroundColor:['rgba(201,169,110,.7)','rgba(34,197,94,.7)','rgba(245,158,11,.6)'],yAxisID:'y'},{label:'CPL (R$)',data:[34.86,31.33,43.52],type:'line',borderColor:R,pointBackgroundColor:R,yAxisID:'y2',tension:.3}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:R,font:{size:9}},grid:{display:false}}}}});
-new Chart(document.getElementById('c-meta-cpl'),{type:'line',data:{labels:["30/05", "31/05", "01/06", "02/06", "03/06", "04/06", "05/06", "06/06", "07/06", "08/06", "09/06", "10/06", "11/06", "12/06", "13/06", "14/06", "15/06*"],datasets:[
-  {label:'CPL consolidado (R$)',data:[70.53, 65.25, 62.83, 103.27, null, null, null, 42.95, 41.03, 39.42, 25.69, 32.44, 31.85, 35.0, 40.76, 49.86, 55.53],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,pointRadius:3,pointBackgroundColor:GOLD,yAxisID:'y2',spanGaps:true},
-  {label:'Leads/dia',data:[4, 17, 15, 4, 0, 0, 0, 7, 38, 29, 32, 28, 27, 28, 21, 26, 6],type:'bar',backgroundColor:'rgba(96,165,250,.35)',yAxisID:'y'},
-  {label:'Meta R$80',data:[80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0,yAxisID:'y2'}
+// Dias semana
+new Chart(document.getElementById('c-diasemana'),{type:'bar',data:{labels:['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],datasets:[
+  {label:'Leads',data:[66, 62, 48, 38, 26, 31, 77],backgroundColor:'rgba(96,165,250,.6)'}
+]},options:{...opt()}});
+new Chart(document.getElementById('c-neg-diasemana'),{type:'bar',data:{labels:['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],datasets:[
+  {label:'Negócios',data:[0, 0, 0, 0, 0, 0, 0],backgroundColor:'rgba(201,169,110,.7)'}
+]},options:{...opt()}});
+
+// Meta conjuntos
+new Chart(document.getElementById('c-meta-conj'),{type:'bar',data:{labels:['Brasil ex-SP Capital', 'Centro-Oeste Agro', 'Nordeste Segmentado'],datasets:[
+  {label:'Leads',data:[126, 97, 88],backgroundColor:[B,G,Y],yAxisID:'y'},
+  {label:'CPL (R$)',data:[34.2, 33.26, 44.58],type:'line',borderColor:GOLD,yAxisID:'y2',pointRadius:5,pointBackgroundColor:GOLD},
+  {label:'% Negócio CRM',data:[12.2, 19.4, 19.3],type:'line',borderColor:G,borderDash:[4,4],yAxisID:'y2',pointRadius:4}
+]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
+
+// Meta CPL evolução 19 dias
+new Chart(document.getElementById('c-meta-cpl'),{type:'line',data:{labels:['05/30', '05/31', '06/01', '06/02', '06/03', '06/04', '06/05', '06/06', '06/07', '06/08', '06/09', '06/10', '06/11', '06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
+  {label:'CPL consolidado (R$)',data:[60.03, 65.24, 63.15, 98.38, None, None, None, 44.59, 36.17, 36.02, 27.21, 31.69, 30.87, 31.68, 40.76, 46.04, 41.22, 34.79, 47.47, 36.07],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,pointRadius:3,pointBackgroundColor:GOLD,yAxisID:'y2',spanGaps:true},
+  {label:'Leads/dia',data:[3, 17, 15, 4, 0, 0, 0, 6, 35, 29, 32, 28, 27, 28, 21, 26, 25, 31, 20, 10],type:'bar',backgroundColor:'rgba(96,165,250,.35)',yAxisID:'y'},
+  {label:'Meta R$80',data:[80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80],borderColor:'rgba(239,68,68,.4)',borderDash:[5,5],pointRadius:0,yAxisID:'y2'}
 ]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}},grid:{display:false}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{color:grid}}}}});
 
-// ===== QUALIFICAÇÃO =====
-new Chart(document.getElementById('c-camp-compare'),{type:'bar',data:{labels:['07-06 (ativa)','30-06 (pausada)'],datasets:[{label:'Leads',data:[223,49],backgroundColor:['rgba(34,197,94,.5)','rgba(107,114,128,.4)'],yAxisID:'y'},{label:'Negócios',data:[44,2],backgroundColor:['rgba(34,197,94,.9)','rgba(239,68,68,.6)'],yAxisID:'y2'}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid},title:{display:true,text:'Leads',color:tick,font:{size:8}}},y2:{position:'right',ticks:{color:G,font:{size:9}},grid:{display:false},title:{display:true,text:'Negócios',color:G,font:{size:8}}}}}});
+// Qualificação
+new Chart(document.getElementById('c-qualif-conj'),{type:'bar',data:{labels:['Brasil ex-SP Capital', 'Centro-Oeste Agro', 'Nordeste Segmentado'],datasets:[
+  {label:'% Negócio',data:[12.2, 19.4, 19.3],backgroundColor:[GOLD,G,Y]},
+  {label:'Leads',data:[126, 97, 88],type:'line',borderColor:B,yAxisID:'y2',pointRadius:4}
+]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:B,font:{size:9}},grid:{display:false}}}}});
 
-new Chart(document.getElementById('c-qual-hora'),{
-  type:'bar',
-  data:{
-    labels:['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
-    datasets:[
-      {label:'Negócios',data:[3, 0, 0, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 0, 4, 3, 4, 4, 4, 6],backgroundColor:'rgba(34,197,94,.7)',yAxisID:'y'},
-      {label:'% Qualif. (mín 5 leads)',data:[25,0,0,0,0,0,null,null,14,3,18,2,33,3,20,0,12,5,22,2,11,1,7,7,7,7,18,2,12,5,8,3,0,0,28,6,18,8,15,4,16,7,21,1,27,3],type:'line',borderColor:'rgba(201,169,110,.8)',backgroundColor:'transparent',pointBackgroundColor:GOLD,yAxisID:'y2',tension:.4,pointRadius:3,spanGaps:true}
-    ]
-  },
-  options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid},title:{display:true,text:'Negócios',color:tick,font:{size:8}}},y2:{position:'right',ticks:{color:GOLD,font:{size:9},callback:v=>v+'%'},grid:{display:false},title:{display:true,text:'% Qualif.',color:GOLD,font:{size:8}}}}}
-});
-
-new Chart(document.getElementById('c-conj-qual'),{
-  type:'bar',
-  data:{
-    labels:['Nordeste Segm.','Centro-Oeste Agro','Brasil ex-SP Capital'],
-    datasets:[
-      {label:'Leads',data:[64,71,88],backgroundColor:['rgba(34,197,94,.3)','rgba(245,158,11,.3)','rgba(239,68,68,.25)'],yAxisID:'y'},
-      {label:'Negócios',data:[17,15,12],backgroundColor:['rgba(34,197,94,.9)','rgba(245,158,11,.7)','rgba(239,68,68,.6)'],yAxisID:'y2'}
-    ]
-  },
-  options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid},title:{display:true,text:'Leads',color:tick,font:{size:8}}},y2:{position:'right',ticks:{color:G,font:{size:9}},grid:{display:false},title:{display:true,text:'Negócios',color:G,font:{size:8}}}}}
-});
-
-// ===== EVOLUÇÃO =====
-new Chart(document.getElementById('c-diario'),{type:'bar',data:{labels:["30/05", "31/05", "01/06", "02/06", "06/06", "07/06", "08/06", "09/06", "10/06", "11/06", "12/06", "13/06", "14/06", "15/06"],datasets:[{label:'Leads',data:[3, 17, 15, 4, 7, 34, 28, 30, 28, 27, 27, 21, 26, 5],backgroundColor:["rgba(85,95,112,.4)", "rgba(85,95,112,.4)", "rgba(85,95,112,.4)", "rgba(85,95,112,.4)", "rgba(96,165,250,.5)", "rgba(34,197,94,.8)", "rgba(34,197,94,.7)", "rgba(34,197,94,.7)", "rgba(201,169,110,.7)", "rgba(201,169,110,.7)", "rgba(245,158,11,.6)", "rgba(245,158,11,.6)", "rgba(245,158,11,.6)", "rgba(85,95,112,.4)"],yAxisID:'y'},{label:'Negócios',data:[1, 0, 0, 0, 1, 4, 8, 7, 8, 5, 4, 3, 5, 0],type:'line',borderColor:G,pointBackgroundColor:G,yAxisID:'y2',tension:.3,pointRadius:5}]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:tick,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:G,font:{size:9}},grid:{display:false}}}}});
-
-new Chart(document.getElementById('c-cpl-evolucao'),{type:'line',data:{labels:["D1 07/06", "D2 08/06", "D3 09/06", "D4 10/06", "D5 11/06", "D6 12/06", "D7 13/06", "D8 14/06", "D9 15/06*"],datasets:[
-  {label:'Brasil ex-SP',data:[24.25, 47.17, 29.24, 45.66, 30.6, 40.29, 41.34, 39.39, 25.73],borderColor:GOLD,tension:.4,pointRadius:4,pointBackgroundColor:GOLD},
-  {label:'Agro CO',data:[26.42, 26.08, 32.16, 16.2, 26.87, 37.17, 35.01, 80.16, 69.5],borderColor:G,tension:.4,pointRadius:4,pointBackgroundColor:G},
-  {label:'Nordeste',data:[142.69, 50.71, 19.66, 52.71, 38.54, 29.1, 49.04, 46.09, 112.41],borderColor:Y,tension:.4,pointRadius:4,pointBackgroundColor:Y}
+new Chart(document.getElementById('c-qualif-cons'),{type:'bar',data:{labels:['FABIANADE OLIVEIRA CARVALHO', 'Marcelo de Albuquerque Pereira', 'VivianeRodrigues'],datasets:[
+  {label:'Leads',data:[186, 125, 37],backgroundColor:'rgba(96,165,250,.5)'},
+  {label:'Negócios',data:[28, 27, 0],backgroundColor:GOLD}
 ]},options:{...opt()}});
 
+// Evolução CRM
+new Chart(document.getElementById('c-evolucao-crm'),{type:'line',data:{labels:['05/30', '05/31', '06/01', '06/02', '06/06', '06/07', '06/08', '06/09', '06/10', '06/11', '06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
+  {label:'Leads/dia',data:[3, 17, 15, 4, 7, 34, 27, 27, 28, 27, 26, 21, 26, 24, 31, 20, 11],borderColor:B,backgroundColor:'rgba(96,165,250,.1)',tension:.4,yAxisID:'y'},
+  {label:'Negócios/dia',data:[1, 0, 0, 0, 1, 4, 8, 4, 8, 5, 6, 3, 5, 1, 5, 4, 0],borderColor:GOLD,tension:.4,yAxisID:'y2',pointRadius:4}
+]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{position:'left',ticks:{color:tick,font:{size:9}}},y2:{position:'right',ticks:{color:GOLD,font:{size:9}},grid:{display:false}}}}});
 
-// ===== META ADS FILTROS =====
+// Evolução CPL
+new Chart(document.getElementById('c-evolucao-cpl'),{type:'line',data:{labels:['05/30', '05/31', '06/01', '06/02', '06/03', '06/04', '06/05', '06/06', '06/07', '06/08', '06/09', '06/10', '06/11', '06/12', '06/13', '06/14', '06/15', '06/16', '06/17', '06/18'],datasets:[
+  {label:'CPL (R$)',data:[60.03, 65.24, 63.15, 98.38, None, None, None, 44.59, 36.17, 36.02, 27.21, 31.69, 30.87, 31.68, 40.76, 46.04, 41.22, 34.79, 47.47, 36.07],borderColor:GOLD,backgroundColor:'rgba(201,169,110,.08)',tension:.4,spanGaps:true},
+  {label:'Leads/dia',data:[3, 17, 15, 4, 0, 0, 0, 6, 35, 29, 32, 28, 27, 28, 21, 26, 25, 31, 20, 10],type:'bar',backgroundColor:'rgba(96,165,250,.3)',yAxisID:'y2'}
+]},options:{responsive:true,interaction:{mode:'index'},plugins:{legend:{labels:{color:'#8892a0',font:{size:9}}}},scales:{x:{ticks:{color:tick,font:{size:8}},grid:{color:grid}},y:{ticks:{color:GOLD,font:{size:9}},grid:{color:grid}},y2:{position:'right',ticks:{color:B,font:{size:9}},grid:{display:false}}}}});
+
+// Meta filtros
 const META_DATA = {
-  todas: {leads:282,gasto:11968.22,cpl:42.47,impr:96776,alc:53271,ctr:1.87,cpm:123.67},
-  ativa: {leads:231,gasto:8402.71,cpl:36.38,impr:62776,alc:32386,ctr:2.26,cpm:133.85},
+  todas: {leads:362,gasto:15023.84,cpl:41.5,impr:114447,alc:59493,ctr:2.03,cpm:131.27},
+  ativa: {leads:311,gasto:11458.33,cpl:36.84,impr:80447,alc:38608,ctr:2.4,cpm:142.43},
   pausada: {leads:51,gasto:3565.51,cpl:69.91,impr:34000,alc:20885,ctr:1.14,cpm:104.87}
 };
 function fmtMoney(v){return 'R$'+v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})}
 function fmtMoney0(v){return 'R$'+Math.round(v).toLocaleString('pt-BR')}
 function fmtNum(v){return Math.round(v).toLocaleString('pt-BR')}
 function metaFilter(){
-  const camp = document.getElementById('meta-f-campanha').value;
-  const d = META_DATA[camp];
-  document.getElementById('meta-k-gasto').textContent = fmtMoney0(d.gasto);
-  document.getElementById('meta-k-leads').textContent = fmtNum(d.leads);
-  document.getElementById('meta-k-cpl').textContent = fmtMoney(d.cpl);
-  document.getElementById('meta-k-impr').textContent = fmtNum(d.impr);
-  document.getElementById('meta-k-alc').textContent = fmtNum(d.alc);
-  document.getElementById('meta-k-ctr').textContent = d.ctr.toFixed(2).replace('.',',')+'%';
-  document.getElementById('meta-k-cpm').textContent = fmtMoney0(d.cpm);
-  const bdg = document.getElementById('meta-k-cpl-bdg');
-  const diffPct = Math.round((1-d.cpl/80)*100);
-  bdg.textContent = (diffPct>=0 ? diffPct+'% abaixo' : Math.abs(diffPct)+'% acima');
-  bdg.className = 'bdg ' + (diffPct>=0 ? 'bg' : 'br');
-
-  const periodo = document.getElementById('meta-f-periodo').value;
-  const titleEl = document.getElementById('meta-cpl-title');
-  if(camp==='pausada'){
-    titleEl.textContent = 'Evolu\u00e7\u00e3o CPL \u2014 Campanha Anterior (30/05\u201306/06, 7 dias)';
-  } else if(camp==='ativa' || periodo==='9'){
-    titleEl.textContent = 'Evolu\u00e7\u00e3o CPL \u2014 Campanha Ativa (07\u201315/06, 9 dias)';
-  } else if(periodo==='7'){
-    titleEl.textContent = 'Evolu\u00e7\u00e3o CPL consolidado \u2014 \u00daltimos 7 dias';
-  } else {
-    titleEl.textContent = 'Evolu\u00e7\u00e3o CPL consolidado \u2014 17 dias (2 campanhas)';
-  }
+  const camp=document.getElementById('meta-f-campanha').value;
+  const d=META_DATA[camp];
+  document.getElementById('meta-k-gasto').textContent=fmtMoney0(d.gasto);
+  document.getElementById('meta-k-leads').textContent=fmtNum(d.leads);
+  document.getElementById('meta-k-cpl').textContent=fmtMoney(d.cpl);
+  document.getElementById('meta-k-impr').textContent=fmtNum(d.impr);
+  document.getElementById('meta-k-alc').textContent=fmtNum(d.alc);
+  document.getElementById('meta-k-ctr').textContent=d.ctr.toFixed(2).replace('.',',')+'%';
+  document.getElementById('meta-k-cpm').textContent=fmtMoney0(d.cpm);
+  const bdg=document.getElementById('meta-k-cpl-bdg');
+  const dp=Math.round((1-d.cpl/80)*100);
+  bdg.textContent=(dp>=0?dp+'% abaixo':Math.abs(dp)+'% acima');
+  bdg.className='bdg '+(dp>=0?'bg':'br');
+  const titleEl=document.getElementById('meta-cpl-title');
+  if(camp==='pausada'){titleEl.textContent='Evolução CPL — Campanha Anterior (30/05–06/06)';}
+  else if(camp==='ativa'){titleEl.textContent='Evolução CPL — Campanha Ativa (07–18/06)';}
+  else{titleEl.textContent='Evolução CPL consolidado — 19 dias (2 campanhas)';}
 }
+
 </script>
 </body>
 </html>
